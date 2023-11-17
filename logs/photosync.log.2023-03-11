@@ -1,0 +1,17 @@
+2023-03-11 07:46:24,029 INFO Sincronizando /mnt/d/movil/debora
+2023-03-11 07:46:24,030 INFO cd /mnt/d/movil/debora; exiftool -if '$datetimeoriginal and not ($datetimeoriginal eq "0000:00:00 00:00:00")' -o ./%d "-filename<datetimeoriginal" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-11 07:46:24,295 INFO 1 directories scanned
+2023-03-11 07:46:24,295 INFO 0 image files read
+2023-03-11 07:46:24,299 INFO cd /mnt/d/movil/debora; exiftool -if '$trackcreatedate and not ($trackcreatedate eq "0000:00:00 00:00:00")' -o ./%d "-filename<trackcreatedate" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-11 07:46:24,534 INFO 1 directories scanned
+2023-03-11 07:46:24,535 INFO 0 image files read
+2023-03-11 07:46:24,541 INFO cd /mnt/d/movil/debora; exiftool -if '(not $datetimeoriginal or ($datetimeoriginal eq "0000:00:00 00:00:00")) and (not $trackcreatedate or ($trackcreatedate eq "0000:00:00 00:00:00"))' -p '$filename' -q -q .
+2023-03-11 07:59:55,301 INFO Sincronizando /mnt/d/movil/debora
+2023-03-11 07:59:55,301 INFO cd /mnt/d/movil/debora; exiftool -if '$datetimeoriginal and not ($datetimeoriginal eq "0000:00:00 00:00:00")' -o ./%d "-filename<datetimeoriginal" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-11 07:59:55,534 INFO 1 directories scanned
+2023-03-11 07:59:55,535 INFO 0 image files read
+2023-03-11 07:59:55,538 INFO cd /mnt/d/movil/debora; exiftool -if '$trackcreatedate and not ($trackcreatedate eq "0000:00:00 00:00:00")' -o ./%d "-filename<trackcreatedate" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-11 07:59:55,694 INFO 1 directories scanned
+2023-03-11 07:59:55,694 INFO 0 image files read
+2023-03-11 07:59:55,698 INFO cd /mnt/d/movil/debora; exiftool -if '(not $datetimeoriginal or ($datetimeoriginal eq "0000:00:00 00:00:00")) and (not $trackcreatedate or ($trackcreatedate eq "0000:00:00 00:00:00"))' -p '$filename' -q -q .
+2023-03-11 07:59:55,794 INFO Sincronizado /mnt/d/movil/debora con fecha de modificación: 2023-03-11 07:41:38

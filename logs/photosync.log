@@ -1,0 +1,812 @@
+2023-03-21 18:49:22,373 INFO Sincronizando /mnt/d/movil/debora
+2023-03-21 18:49:22,374 INFO cd /mnt/d/movil/debora; exiftool -if '$datetimeoriginal and not ($datetimeoriginal eq "0000:00:00 00:00:00")' -o ./%d "-filename<datetimeoriginal" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-21 18:49:22,772 INFO 1 directories scanned
+2023-03-21 18:49:22,772 INFO 0 image files read
+2023-03-21 18:49:22,774 INFO cd /mnt/d/movil/debora; exiftool -if '$trackcreatedate and not ($trackcreatedate eq "0000:00:00 00:00:00")' -o ./%d "-filename<trackcreatedate" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-21 18:49:22,934 INFO 1 directories scanned
+2023-03-21 18:49:22,934 INFO 0 image files read
+2023-03-21 18:49:22,939 INFO cd /mnt/d/movil/debora; exiftool -if '(not $datetimeoriginal or ($datetimeoriginal eq "0000:00:00 00:00:00")) and (not $trackcreatedate or ($trackcreatedate eq "0000:00:00 00:00:00"))' -p '$filename' -q -q .
+2023-03-21 18:49:23,037 INFO Sincronizado /mnt/d/movil/debora con fecha de modificación: 2023-03-21 08:27:29
+2023-03-21 18:49:23,139 INFO Sincronizando /mnt/d/movil/debora/131APPLE
+2023-03-21 18:49:23,139 INFO cd /mnt/d/movil/debora/131APPLE; exiftool -if '$datetimeoriginal and not ($datetimeoriginal eq "0000:00:00 00:00:00")' -o ./%d "-filename<datetimeoriginal" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-21 18:49:23,765 INFO ======== ./IMG_1251.HEIC [1/251]
+2023-03-21 18:49:23,849 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1251.HEIC
+2023-03-21 18:49:23,906 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1251.HEIC' already exists - ./IMG_1251.HEIC
+2023-03-21 18:49:23,982 INFO ======== ./IMG_1252.HEIC [2/251]
+2023-03-21 18:49:24,013 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1252.HEIC
+2023-03-21 18:49:24,046 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1252.HEIC' already exists - ./IMG_1252.HEIC
+2023-03-21 18:49:24,111 INFO ======== ./IMG_1253.HEIC [3/251]
+2023-03-21 18:49:24,142 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1253.HEIC
+2023-03-21 18:49:24,149 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1253.HEIC' already exists - ./IMG_1253.HEIC
+2023-03-21 18:49:24,209 INFO ======== ./IMG_1254.HEIC [4/251]
+2023-03-21 18:49:24,235 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1254.HEIC
+2023-03-21 18:49:24,241 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1254.HEIC' already exists - ./IMG_1254.HEIC
+2023-03-21 18:49:24,281 INFO ======== ./IMG_1255.HEIC [5/251]
+2023-03-21 18:49:24,309 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1255.HEIC
+2023-03-21 18:49:24,315 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1255.HEIC' already exists - ./IMG_1255.HEIC
+2023-03-21 18:49:24,366 INFO ======== ./IMG_1256.HEIC [6/251]
+2023-03-21 18:49:24,393 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1256.HEIC
+2023-03-21 18:49:24,398 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1256.HEIC' already exists - ./IMG_1256.HEIC
+2023-03-21 18:49:24,425 INFO ======== ./IMG_1257.JPG [7/251]
+2023-03-21 18:49:24,441 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1257.JPG
+2023-03-21 18:49:24,447 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1257.JPG' already exists - ./IMG_1257.JPG
+2023-03-21 18:49:24,481 INFO ======== ./IMG_1258.JPG [8/251]
+2023-03-21 18:49:24,500 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1258.JPG
+2023-03-21 18:49:24,505 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1258.JPG' already exists - ./IMG_1258.JPG
+2023-03-21 18:49:24,605 INFO ======== ./IMG_1260.HEIC [10/251]
+2023-03-21 18:49:24,638 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1260.HEIC
+2023-03-21 18:49:24,643 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1260.HEIC' already exists - ./IMG_1260.HEIC
+2023-03-21 18:49:24,682 INFO ======== ./IMG_1265.JPG [11/251]
+2023-03-21 18:49:24,702 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1265.JPG
+2023-03-21 18:49:24,708 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1265.JPG' already exists - ./IMG_1265.JPG
+2023-03-21 18:49:24,754 INFO ======== ./IMG_1266.HEIC [12/251]
+2023-03-21 18:49:24,779 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1266.HEIC
+2023-03-21 18:49:24,784 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1266.HEIC' already exists - ./IMG_1266.HEIC
+2023-03-21 18:49:24,842 INFO ======== ./IMG_1267.HEIC [13/251]
+2023-03-21 18:49:24,869 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1267.HEIC
+2023-03-21 18:49:24,874 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1267.HEIC' already exists - ./IMG_1267.HEIC
+2023-03-21 18:49:24,922 INFO ======== ./IMG_1270.HEIC [14/251]
+2023-03-21 18:49:24,946 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1270.HEIC
+2023-03-21 18:49:24,950 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1270.HEIC' already exists - ./IMG_1270.HEIC
+2023-03-21 18:49:24,996 INFO ======== ./IMG_1271.JPG [15/251]
+2023-03-21 18:49:25,015 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1271.JPG
+2023-03-21 18:49:25,022 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1271.JPG' already exists - ./IMG_1271.JPG
+2023-03-21 18:49:25,073 INFO ======== ./IMG_1272.JPG [16/251]
+2023-03-21 18:49:25,093 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1272.JPG
+2023-03-21 18:49:25,098 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1272.JPG' already exists - ./IMG_1272.JPG
+2023-03-21 18:49:25,142 INFO ======== ./IMG_1273.JPG [17/251]
+2023-03-21 18:49:25,161 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1273.JPG
+2023-03-21 18:49:25,167 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1273.JPG' already exists - ./IMG_1273.JPG
+2023-03-21 18:49:25,220 INFO ======== ./IMG_1274.JPG [18/251]
+2023-03-21 18:49:25,243 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1274.JPG
+2023-03-21 18:49:25,248 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1274.JPG' already exists - ./IMG_1274.JPG
+2023-03-21 18:49:25,281 INFO ======== ./IMG_1275.JPG [19/251]
+2023-03-21 18:49:25,300 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1275.JPG
+2023-03-21 18:49:25,306 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1275.JPG' already exists - ./IMG_1275.JPG
+2023-03-21 18:49:25,334 INFO ======== ./IMG_1276.JPG [20/251]
+2023-03-21 18:49:25,354 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1276.JPG
+2023-03-21 18:49:25,359 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1276.JPG' already exists - ./IMG_1276.JPG
+2023-03-21 18:49:25,389 INFO ======== ./IMG_1277.JPG [21/251]
+2023-03-21 18:49:25,410 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1277.JPG
+2023-03-21 18:49:25,415 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1277.JPG' already exists - ./IMG_1277.JPG
+2023-03-21 18:49:25,447 INFO ======== ./IMG_1278.JPG [22/251]
+2023-03-21 18:49:25,465 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1278.JPG
+2023-03-21 18:49:25,475 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1278.JPG' already exists - ./IMG_1278.JPG
+2023-03-21 18:49:25,506 INFO ======== ./IMG_1279.JPG [23/251]
+2023-03-21 18:49:25,526 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1279.JPG
+2023-03-21 18:49:25,530 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1279.JPG' already exists - ./IMG_1279.JPG
+2023-03-21 18:49:25,568 INFO ======== ./IMG_1280.JPG [24/251]
+2023-03-21 18:49:25,589 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1280.JPG
+2023-03-21 18:49:25,595 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1280.JPG' already exists - ./IMG_1280.JPG
+2023-03-21 18:49:25,631 INFO ======== ./IMG_1281.JPG [25/251]
+2023-03-21 18:49:25,650 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1281.JPG
+2023-03-21 18:49:25,658 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1281.JPG' already exists - ./IMG_1281.JPG
+2023-03-21 18:49:25,697 INFO ======== ./IMG_1284.JPG [26/251]
+2023-03-21 18:49:25,717 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1284.JPG
+2023-03-21 18:49:25,723 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1284.JPG' already exists - ./IMG_1284.JPG
+2023-03-21 18:49:25,776 INFO ======== ./IMG_1292.JPG [27/251]
+2023-03-21 18:49:25,802 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1292.JPG
+2023-03-21 18:49:25,809 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1292.JPG' already exists - ./IMG_1292.JPG
+2023-03-21 18:49:25,862 INFO ======== ./IMG_1297.HEIC [28/251]
+2023-03-21 18:49:25,891 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1297.HEIC
+2023-03-21 18:49:25,897 INFO Error: '/mnt/d/fotos/2022/2022-12/IMG_1297.HEIC' already exists - ./IMG_1297.HEIC
+2023-03-21 18:49:26,022 INFO ======== ./IMG_1302.HEIC [30/251]
+2023-03-21 18:49:26,053 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1302.HEIC
+2023-03-21 18:49:26,069 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1302.HEIC' already exists - ./IMG_1302.HEIC
+2023-03-21 18:49:26,107 INFO ======== ./IMG_1306.JPG [31/251]
+2023-03-21 18:49:26,128 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1306.JPG
+2023-03-21 18:49:26,133 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1306.JPG' already exists - ./IMG_1306.JPG
+2023-03-21 18:49:26,179 INFO ======== ./IMG_1309.JPG [32/251]
+2023-03-21 18:49:26,198 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1309.JPG
+2023-03-21 18:49:26,204 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1309.JPG' already exists - ./IMG_1309.JPG
+2023-03-21 18:49:26,239 INFO ======== ./IMG_1310.JPG [33/251]
+2023-03-21 18:49:26,255 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1310.JPG
+2023-03-21 18:49:26,261 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1310.JPG' already exists - ./IMG_1310.JPG
+2023-03-21 18:49:26,312 INFO ======== ./IMG_1311.JPG [34/251]
+2023-03-21 18:49:26,331 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1311.JPG
+2023-03-21 18:49:26,336 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1311.JPG' already exists - ./IMG_1311.JPG
+2023-03-21 18:49:26,387 INFO ======== ./IMG_1315.HEIC [35/251]
+2023-03-21 18:49:26,412 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1315.HEIC
+2023-03-21 18:49:26,418 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1315.HEIC' already exists - ./IMG_1315.HEIC
+2023-03-21 18:49:26,488 INFO ======== ./IMG_1323.JPG [37/251]
+2023-03-21 18:49:26,507 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1323.JPG
+2023-03-21 18:49:26,512 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1323.JPG' already exists - ./IMG_1323.JPG
+2023-03-21 18:49:26,560 INFO ======== ./IMG_1324.JPG [38/251]
+2023-03-21 18:49:26,582 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1324.JPG
+2023-03-21 18:49:26,588 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1324.JPG' already exists - ./IMG_1324.JPG
+2023-03-21 18:49:26,624 INFO ======== ./IMG_1325.JPG [39/251]
+2023-03-21 18:49:26,643 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1325.JPG
+2023-03-21 18:49:26,649 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1325.JPG' already exists - ./IMG_1325.JPG
+2023-03-21 18:49:26,686 INFO ======== ./IMG_1326.JPG [40/251]
+2023-03-21 18:49:26,707 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1326.JPG
+2023-03-21 18:49:26,713 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1326.JPG' already exists - ./IMG_1326.JPG
+2023-03-21 18:49:26,757 INFO ======== ./IMG_1327.JPG [41/251]
+2023-03-21 18:49:26,776 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1327.JPG
+2023-03-21 18:49:26,782 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1327.JPG' already exists - ./IMG_1327.JPG
+2023-03-21 18:49:26,892 INFO ======== ./IMG_1330.JPG [43/251]
+2023-03-21 18:49:26,911 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1330.JPG
+2023-03-21 18:49:26,919 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1330.JPG' already exists - ./IMG_1330.JPG
+2023-03-21 18:49:26,963 INFO ======== ./IMG_1331.JPG [44/251]
+2023-03-21 18:49:26,984 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1331.JPG
+2023-03-21 18:49:26,989 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1331.JPG' already exists - ./IMG_1331.JPG
+2023-03-21 18:49:27,268 INFO ======== ./IMG_1334.HEIC [46/251]
+2023-03-21 18:49:27,299 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1334.HEIC
+2023-03-21 18:49:27,304 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1334.HEIC' already exists - ./IMG_1334.HEIC
+2023-03-21 18:49:27,341 INFO ======== ./IMG_1335.HEIC [47/251]
+2023-03-21 18:49:27,373 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1335.HEIC
+2023-03-21 18:49:27,378 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1335.HEIC' already exists - ./IMG_1335.HEIC
+2023-03-21 18:49:27,432 INFO ======== ./IMG_1336.HEIC [48/251]
+2023-03-21 18:49:27,457 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1336.HEIC
+2023-03-21 18:49:27,464 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1336.HEIC' already exists - ./IMG_1336.HEIC
+2023-03-21 18:49:27,529 INFO ======== ./IMG_1337.HEIC [49/251]
+2023-03-21 18:49:27,557 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1337.HEIC
+2023-03-21 18:49:27,562 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1337.HEIC' already exists - ./IMG_1337.HEIC
+2023-03-21 18:49:27,605 INFO ======== ./IMG_1338.HEIC [50/251]
+2023-03-21 18:49:27,632 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1338.HEIC
+2023-03-21 18:49:27,638 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1338.HEIC' already exists - ./IMG_1338.HEIC
+2023-03-21 18:49:27,691 INFO ======== ./IMG_1339.HEIC [51/251]
+2023-03-21 18:49:27,718 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1339.HEIC
+2023-03-21 18:49:27,722 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1339.HEIC' already exists - ./IMG_1339.HEIC
+2023-03-21 18:49:27,780 INFO ======== ./IMG_1340.HEIC [52/251]
+2023-03-21 18:49:27,809 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1340.HEIC
+2023-03-21 18:49:27,814 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1340.HEIC' already exists - ./IMG_1340.HEIC
+2023-03-21 18:49:27,930 INFO ======== ./IMG_1342.HEIC [54/251]
+2023-03-21 18:49:27,967 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1342.HEIC
+2023-03-21 18:49:27,971 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1342.HEIC' already exists - ./IMG_1342.HEIC
+2023-03-21 18:49:28,018 INFO ======== ./IMG_1343.HEIC [55/251]
+2023-03-21 18:49:28,044 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1343.HEIC
+2023-03-21 18:49:28,049 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1343.HEIC' already exists - ./IMG_1343.HEIC
+2023-03-21 18:49:28,104 INFO ======== ./IMG_1344.HEIC [56/251]
+2023-03-21 18:49:28,138 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1344.HEIC
+2023-03-21 18:49:28,143 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1344.HEIC' already exists - ./IMG_1344.HEIC
+2023-03-21 18:49:28,194 INFO ======== ./IMG_1345.HEIC [57/251]
+2023-03-21 18:49:28,232 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1345.HEIC
+2023-03-21 18:49:28,237 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1345.HEIC' already exists - ./IMG_1345.HEIC
+2023-03-21 18:49:28,282 INFO ======== ./IMG_1346.HEIC [58/251]
+2023-03-21 18:49:28,311 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1346.HEIC
+2023-03-21 18:49:28,315 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1346.HEIC' already exists - ./IMG_1346.HEIC
+2023-03-21 18:49:28,417 INFO ======== ./IMG_1348.HEIC [60/251]
+2023-03-21 18:49:28,442 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1348.HEIC
+2023-03-21 18:49:28,448 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1348.HEIC' already exists - ./IMG_1348.HEIC
+2023-03-21 18:49:28,489 INFO ======== ./IMG_1349.JPG [61/251]
+2023-03-21 18:49:28,507 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1349.JPG
+2023-03-21 18:49:28,511 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1349.JPG' already exists - ./IMG_1349.JPG
+2023-03-21 18:49:28,557 INFO ======== ./IMG_1350.HEIC [62/251]
+2023-03-21 18:49:28,586 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1350.HEIC
+2023-03-21 18:49:28,590 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1350.HEIC' already exists - ./IMG_1350.HEIC
+2023-03-21 18:49:28,647 INFO ======== ./IMG_1351.HEIC [63/251]
+2023-03-21 18:49:28,681 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1351.HEIC
+2023-03-21 18:49:28,685 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1351.HEIC' already exists - ./IMG_1351.HEIC
+2023-03-21 18:49:28,729 INFO ======== ./IMG_1352.HEIC [64/251]
+2023-03-21 18:49:28,757 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1352.HEIC
+2023-03-21 18:49:28,782 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1352.HEIC' already exists - ./IMG_1352.HEIC
+2023-03-21 18:49:29,025 INFO ======== ./IMG_1359.JPG [69/251]
+2023-03-21 18:49:29,038 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1359.JPG
+2023-03-21 18:49:29,041 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1359.JPG' already exists - ./IMG_1359.JPG
+2023-03-21 18:49:29,137 INFO ======== ./IMG_1360.HEIC [70/251]
+2023-03-21 18:49:29,176 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1360.HEIC
+2023-03-21 18:49:29,181 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1360.HEIC' already exists - ./IMG_1360.HEIC
+2023-03-21 18:49:29,227 INFO ======== ./IMG_1361.HEIC [71/251]
+2023-03-21 18:49:29,258 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1361.HEIC
+2023-03-21 18:49:29,264 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1361.HEIC' already exists - ./IMG_1361.HEIC
+2023-03-21 18:49:29,336 INFO ======== ./IMG_1362.HEIC [72/251]
+2023-03-21 18:49:29,376 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1362.HEIC
+2023-03-21 18:49:29,382 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1362.HEIC' already exists - ./IMG_1362.HEIC
+2023-03-21 18:49:29,451 INFO ======== ./IMG_1363.HEIC [73/251]
+2023-03-21 18:49:29,488 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1363.HEIC
+2023-03-21 18:49:29,494 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1363.HEIC' already exists - ./IMG_1363.HEIC
+2023-03-21 18:49:29,555 INFO ======== ./IMG_1364.HEIC [74/251]
+2023-03-21 18:49:29,590 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1364.HEIC
+2023-03-21 18:49:29,597 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1364.HEIC' already exists - ./IMG_1364.HEIC
+2023-03-21 18:49:29,662 INFO ======== ./IMG_1365.HEIC [75/251]
+2023-03-21 18:49:29,697 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1365.HEIC
+2023-03-21 18:49:29,704 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1365.HEIC' already exists - ./IMG_1365.HEIC
+2023-03-21 18:49:29,756 INFO ======== ./IMG_1366.HEIC [76/251]
+2023-03-21 18:49:29,787 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1366.HEIC
+2023-03-21 18:49:29,791 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1366.HEIC' already exists - ./IMG_1366.HEIC
+2023-03-21 18:49:29,852 INFO ======== ./IMG_1367.HEIC [77/251]
+2023-03-21 18:49:29,881 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1367.HEIC
+2023-03-21 18:49:29,887 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1367.HEIC' already exists - ./IMG_1367.HEIC
+2023-03-21 18:49:29,929 INFO ======== ./IMG_1368.JPG [78/251]
+2023-03-21 18:49:29,947 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1368.JPG
+2023-03-21 18:49:29,953 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1368.JPG' already exists - ./IMG_1368.JPG
+2023-03-21 18:49:29,996 INFO ======== ./IMG_1369.JPG [79/251]
+2023-03-21 18:49:30,015 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1369.JPG
+2023-03-21 18:49:30,020 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1369.JPG' already exists - ./IMG_1369.JPG
+2023-03-21 18:49:30,210 INFO ======== ./IMG_1376.HEIC [82/251]
+2023-03-21 18:49:30,242 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1376.HEIC
+2023-03-21 18:49:30,247 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1376.HEIC' already exists - ./IMG_1376.HEIC
+2023-03-21 18:49:30,336 INFO ======== ./IMG_1377.HEIC [83/251]
+2023-03-21 18:49:30,365 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1377.HEIC
+2023-03-21 18:49:30,395 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1377.HEIC' already exists - ./IMG_1377.HEIC
+2023-03-21 18:49:30,456 INFO ======== ./IMG_1378.HEIC [84/251]
+2023-03-21 18:49:30,489 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1378.HEIC
+2023-03-21 18:49:30,495 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1378.HEIC' already exists - ./IMG_1378.HEIC
+2023-03-21 18:49:30,657 INFO ======== ./IMG_1379.HEIC [85/251]
+2023-03-21 18:49:30,685 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1379.HEIC
+2023-03-21 18:49:30,693 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1379.HEIC' already exists - ./IMG_1379.HEIC
+2023-03-21 18:49:30,735 INFO ======== ./IMG_1380.HEIC [86/251]
+2023-03-21 18:49:30,761 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1380.HEIC
+2023-03-21 18:49:30,765 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1380.HEIC' already exists - ./IMG_1380.HEIC
+2023-03-21 18:49:30,840 INFO ======== ./IMG_1382.HEIC [87/251]
+2023-03-21 18:49:30,870 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1382.HEIC
+2023-03-21 18:49:30,875 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1382.HEIC' already exists - ./IMG_1382.HEIC
+2023-03-21 18:49:30,906 INFO ======== ./IMG_1383.JPG [88/251]
+2023-03-21 18:49:30,923 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1383.JPG
+2023-03-21 18:49:30,928 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1383.JPG' already exists - ./IMG_1383.JPG
+2023-03-21 18:49:30,956 INFO ======== ./IMG_1384.JPG [89/251]
+2023-03-21 18:49:30,972 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1384.JPG
+2023-03-21 18:49:30,977 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1384.JPG' already exists - ./IMG_1384.JPG
+2023-03-21 18:49:31,015 INFO ======== ./IMG_1387.JPG [90/251]
+2023-03-21 18:49:31,039 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1387.JPG
+2023-03-21 18:49:31,045 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1387.JPG' already exists - ./IMG_1387.JPG
+2023-03-21 18:49:31,238 INFO ======== ./IMG_1398.HEIC [93/251]
+2023-03-21 18:49:31,275 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1398.HEIC
+2023-03-21 18:49:31,300 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1398.HEIC' already exists - ./IMG_1398.HEIC
+2023-03-21 18:49:31,487 INFO ======== ./IMG_1423.JPG [97/251]
+2023-03-21 18:49:31,510 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1423.JPG
+2023-03-21 18:49:31,515 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1423.JPG' already exists - ./IMG_1423.JPG
+2023-03-21 18:49:31,567 INFO ======== ./IMG_1448.JPG [98/251]
+2023-03-21 18:49:31,593 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1448.JPG
+2023-03-21 18:49:31,601 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1448.JPG' already exists - ./IMG_1448.JPG
+2023-03-21 18:49:31,663 INFO ======== ./IMG_1451.HEIC [99/251]
+2023-03-21 18:49:31,692 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1451.HEIC
+2023-03-21 18:49:31,696 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1451.HEIC' already exists - ./IMG_1451.HEIC
+2023-03-21 18:49:31,747 INFO ======== ./IMG_1455.HEIC [100/251]
+2023-03-21 18:49:31,782 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1455.HEIC
+2023-03-21 18:49:31,788 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1455.HEIC' already exists - ./IMG_1455.HEIC
+2023-03-21 18:49:31,830 INFO ======== ./IMG_1456.JPG [101/251]
+2023-03-21 18:49:31,846 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1456.JPG
+2023-03-21 18:49:31,854 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1456.JPG' already exists - ./IMG_1456.JPG
+2023-03-21 18:49:31,896 INFO ======== ./IMG_1457.JPG [102/251]
+2023-03-21 18:49:31,918 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1457.JPG
+2023-03-21 18:49:31,924 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1457.JPG' already exists - ./IMG_1457.JPG
+2023-03-21 18:49:31,969 INFO ======== ./IMG_1458.JPG [103/251]
+2023-03-21 18:49:31,986 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1458.JPG
+2023-03-21 18:49:31,991 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1458.JPG' already exists - ./IMG_1458.JPG
+2023-03-21 18:49:32,030 INFO ======== ./IMG_1470.JPG [104/251]
+2023-03-21 18:49:32,056 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1470.JPG
+2023-03-21 18:49:32,078 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1470.JPG' already exists - ./IMG_1470.JPG
+2023-03-21 18:49:32,137 INFO ======== ./IMG_1473.HEIC [105/251]
+2023-03-21 18:49:32,164 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1473.HEIC
+2023-03-21 18:49:32,171 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1473.HEIC' already exists - ./IMG_1473.HEIC
+2023-03-21 18:49:32,208 INFO ======== ./IMG_1474.HEIC [106/251]
+2023-03-21 18:49:32,235 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1474.HEIC
+2023-03-21 18:49:32,240 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1474.HEIC' already exists - ./IMG_1474.HEIC
+2023-03-21 18:49:32,345 INFO ======== ./IMG_1475.HEIC [107/251]
+2023-03-21 18:49:32,370 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1475.HEIC
+2023-03-21 18:49:32,375 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1475.HEIC' already exists - ./IMG_1475.HEIC
+2023-03-21 18:49:32,421 INFO ======== ./IMG_1476.JPG [108/251]
+2023-03-21 18:49:32,451 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1476.JPG
+2023-03-21 18:49:32,459 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1476.JPG' already exists - ./IMG_1476.JPG
+2023-03-21 18:49:32,504 INFO ======== ./IMG_1477.HEIC [109/251]
+2023-03-21 18:49:32,527 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1477.HEIC
+2023-03-21 18:49:32,532 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1477.HEIC' already exists - ./IMG_1477.HEIC
+2023-03-21 18:49:32,575 INFO ======== ./IMG_1478.HEIC [110/251]
+2023-03-21 18:49:32,599 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1478.HEIC
+2023-03-21 18:49:32,605 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1478.HEIC' already exists - ./IMG_1478.HEIC
+2023-03-21 18:49:32,657 INFO ======== ./IMG_1479.HEIC [111/251]
+2023-03-21 18:49:32,681 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1479.HEIC
+2023-03-21 18:49:32,684 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1479.HEIC' already exists - ./IMG_1479.HEIC
+2023-03-21 18:49:32,718 INFO ======== ./IMG_1480.HEIC [112/251]
+2023-03-21 18:49:32,737 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1480.HEIC
+2023-03-21 18:49:32,741 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1480.HEIC' already exists - ./IMG_1480.HEIC
+2023-03-21 18:49:32,770 INFO ======== ./IMG_1481.HEIC [113/251]
+2023-03-21 18:49:32,804 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1481.HEIC
+2023-03-21 18:49:32,809 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1481.HEIC' already exists - ./IMG_1481.HEIC
+2023-03-21 18:49:32,845 INFO ======== ./IMG_1483.JPG [114/251]
+2023-03-21 18:49:32,863 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1483.JPG
+2023-03-21 18:49:32,868 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1483.JPG' already exists - ./IMG_1483.JPG
+2023-03-21 18:49:32,920 INFO ======== ./IMG_1490.HEIC [115/251]
+2023-03-21 18:49:32,945 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1490.HEIC
+2023-03-21 18:49:32,949 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1490.HEIC' already exists - ./IMG_1490.HEIC
+2023-03-21 18:49:33,001 INFO ======== ./IMG_1491.HEIC [116/251]
+2023-03-21 18:49:33,028 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1491.HEIC
+2023-03-21 18:49:33,032 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1491.HEIC' already exists - ./IMG_1491.HEIC
+2023-03-21 18:49:33,070 INFO ======== ./IMG_1500.JPG [117/251]
+2023-03-21 18:49:33,088 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1500.JPG
+2023-03-21 18:49:33,115 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1500.JPG' already exists - ./IMG_1500.JPG
+2023-03-21 18:49:33,176 INFO ======== ./IMG_1501.JPG [118/251]
+2023-03-21 18:49:33,198 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1501.JPG
+2023-03-21 18:49:33,204 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1501.JPG' already exists - ./IMG_1501.JPG
+2023-03-21 18:49:33,328 INFO ======== ./IMG_1504.JPG [121/251]
+2023-03-21 18:49:33,341 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1504.JPG
+2023-03-21 18:49:33,345 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1504.JPG' already exists - ./IMG_1504.JPG
+2023-03-21 18:49:33,376 INFO ======== ./IMG_1513.HEIC [122/251]
+2023-03-21 18:49:33,395 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1513.HEIC
+2023-03-21 18:49:33,398 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1513.HEIC' already exists - ./IMG_1513.HEIC
+2023-03-21 18:49:33,427 INFO ======== ./IMG_1514.HEIC [123/251]
+2023-03-21 18:49:33,451 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1514.HEIC
+2023-03-21 18:49:33,455 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1514.HEIC' already exists - ./IMG_1514.HEIC
+2023-03-21 18:49:33,496 INFO ======== ./IMG_1515.PNG [124/251]
+2023-03-21 18:49:33,511 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1515.PNG' already exists - ./IMG_1515.PNG
+2023-03-21 18:49:33,548 INFO ======== ./IMG_1516.JPG [125/251]
+2023-03-21 18:49:33,561 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1516.JPG
+2023-03-21 18:49:33,565 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1516.JPG' already exists - ./IMG_1516.JPG
+2023-03-21 18:49:33,624 INFO ======== ./IMG_1522.JPG [127/251]
+2023-03-21 18:49:33,636 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1522.JPG
+2023-03-21 18:49:33,639 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1522.JPG' already exists - ./IMG_1522.JPG
+2023-03-21 18:49:33,673 INFO ======== ./IMG_1528.HEIC [128/251]
+2023-03-21 18:49:33,698 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1528.HEIC
+2023-03-21 18:49:33,702 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1528.HEIC' already exists - ./IMG_1528.HEIC
+2023-03-21 18:49:33,769 INFO ======== ./IMG_1535.HEIC [130/251]
+2023-03-21 18:49:33,785 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1535.HEIC
+2023-03-21 18:49:33,789 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1535.HEIC' already exists - ./IMG_1535.HEIC
+2023-03-21 18:49:33,831 INFO ======== ./IMG_1536.HEIC [131/251]
+2023-03-21 18:49:33,852 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1536.HEIC
+2023-03-21 18:49:33,856 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1536.HEIC' already exists - ./IMG_1536.HEIC
+2023-03-21 18:49:33,967 INFO ======== ./IMG_1541.JPG [134/251]
+2023-03-21 18:49:33,980 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1541.JPG
+2023-03-21 18:49:33,984 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1541.JPG' already exists - ./IMG_1541.JPG
+2023-03-21 18:49:34,128 INFO ======== ./IMG_1545.HEIC [138/251]
+2023-03-21 18:49:34,150 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1545.HEIC
+2023-03-21 18:49:34,153 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1545.HEIC' already exists - ./IMG_1545.HEIC
+2023-03-21 18:49:34,196 INFO ======== ./IMG_1546.HEIC [139/251]
+2023-03-21 18:49:34,219 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1546.HEIC
+2023-03-21 18:49:34,223 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1546.HEIC' already exists - ./IMG_1546.HEIC
+2023-03-21 18:49:34,257 INFO ======== ./IMG_1547.HEIC [140/251]
+2023-03-21 18:49:34,283 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1547.HEIC
+2023-03-21 18:49:34,286 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1547.HEIC' already exists - ./IMG_1547.HEIC
+2023-03-21 18:49:34,319 INFO ======== ./IMG_1548.HEIC [141/251]
+2023-03-21 18:49:34,341 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1548.HEIC
+2023-03-21 18:49:34,345 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1548.HEIC' already exists - ./IMG_1548.HEIC
+2023-03-21 18:49:34,384 INFO ======== ./IMG_1549.HEIC [142/251]
+2023-03-21 18:49:34,410 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1549.HEIC
+2023-03-21 18:49:34,413 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1549.HEIC' already exists - ./IMG_1549.HEIC
+2023-03-21 18:49:34,443 INFO ======== ./IMG_1557.JPG [143/251]
+2023-03-21 18:49:34,455 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1557.JPG
+2023-03-21 18:49:34,459 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1557.JPG' already exists - ./IMG_1557.JPG
+2023-03-21 18:49:34,483 INFO ======== ./IMG_1558.JPG [144/251]
+2023-03-21 18:49:34,499 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1558.JPG
+2023-03-21 18:49:34,522 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1558.JPG' already exists - ./IMG_1558.JPG
+2023-03-21 18:49:34,600 INFO ======== ./IMG_1560.JPG [146/251]
+2023-03-21 18:49:34,612 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1560.JPG
+2023-03-21 18:49:34,615 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1560.JPG' already exists - ./IMG_1560.JPG
+2023-03-21 18:49:34,710 INFO ======== ./IMG_1563.JPG [149/251]
+2023-03-21 18:49:34,724 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1563.JPG
+2023-03-21 18:49:34,730 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1563.JPG' already exists - ./IMG_1563.JPG
+2023-03-21 18:49:35,075 INFO ======== ./IMG_1573.JPG [157/251]
+2023-03-21 18:49:35,088 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1573.JPG
+2023-03-21 18:49:35,118 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1573.JPG' already exists - ./IMG_1573.JPG
+2023-03-21 18:49:35,166 INFO ======== ./IMG_1574.JPG [158/251]
+2023-03-21 18:49:35,184 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1574.JPG
+2023-03-21 18:49:35,188 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1574.JPG' already exists - ./IMG_1574.JPG
+2023-03-21 18:49:35,218 INFO ======== ./IMG_1575.JPG [159/251]
+2023-03-21 18:49:35,244 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1575.JPG
+2023-03-21 18:49:35,250 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1575.JPG' already exists - ./IMG_1575.JPG
+2023-03-21 18:49:35,674 INFO ======== ./IMG_1580.HEIC [164/251]
+2023-03-21 18:49:35,695 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1580.HEIC
+2023-03-21 18:49:35,700 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1580.HEIC' already exists - ./IMG_1580.HEIC
+2023-03-21 18:49:35,737 INFO ======== ./IMG_1581.HEIC [165/251]
+2023-03-21 18:49:35,759 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1581.HEIC
+2023-03-21 18:49:35,765 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1581.HEIC' already exists - ./IMG_1581.HEIC
+2023-03-21 18:49:35,803 INFO ======== ./IMG_1582.HEIC [166/251]
+2023-03-21 18:49:35,826 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1582.HEIC
+2023-03-21 18:49:35,833 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1582.HEIC' already exists - ./IMG_1582.HEIC
+2023-03-21 18:49:35,864 INFO ======== ./IMG_1583.JPG [167/251]
+2023-03-21 18:49:35,882 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1583.JPG
+2023-03-21 18:49:35,888 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1583.JPG' already exists - ./IMG_1583.JPG
+2023-03-21 18:49:35,920 INFO ======== ./IMG_1584.JPG [168/251]
+2023-03-21 18:49:35,939 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1584.JPG
+2023-03-21 18:49:35,945 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1584.JPG' already exists - ./IMG_1584.JPG
+2023-03-21 18:49:35,985 INFO ======== ./IMG_1585.HEIC [169/251]
+2023-03-21 18:49:36,007 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1585.HEIC
+2023-03-21 18:49:36,011 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1585.HEIC' already exists - ./IMG_1585.HEIC
+2023-03-21 18:49:36,148 INFO ======== ./IMG_1586.HEIC [170/251]
+2023-03-21 18:49:36,169 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1586.HEIC
+2023-03-21 18:49:36,175 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1586.HEIC' already exists - ./IMG_1586.HEIC
+2023-03-21 18:49:36,318 INFO ======== ./IMG_1587.HEIC [171/251]
+2023-03-21 18:49:36,343 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1587.HEIC
+2023-03-21 18:49:36,348 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1587.HEIC' already exists - ./IMG_1587.HEIC
+2023-03-21 18:49:36,400 INFO ======== ./IMG_1590.HEIC [172/251]
+2023-03-21 18:49:36,431 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1590.HEIC
+2023-03-21 18:49:36,436 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1590.HEIC' already exists - ./IMG_1590.HEIC
+2023-03-21 18:49:36,472 INFO ======== ./IMG_1591.JPG [173/251]
+2023-03-21 18:49:36,490 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1591.JPG
+2023-03-21 18:49:36,494 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1591.JPG' already exists - ./IMG_1591.JPG
+2023-03-21 18:49:36,539 INFO ======== ./IMG_1592.HEIC [174/251]
+2023-03-21 18:49:36,564 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1592.HEIC
+2023-03-21 18:49:36,569 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1592.HEIC' already exists - ./IMG_1592.HEIC
+2023-03-21 18:49:36,607 INFO ======== ./IMG_1593.JPG [175/251]
+2023-03-21 18:49:36,625 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1593.JPG
+2023-03-21 18:49:36,629 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1593.JPG' already exists - ./IMG_1593.JPG
+2023-03-21 18:49:36,663 INFO ======== ./IMG_1597.JPG [176/251]
+2023-03-21 18:49:36,684 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1597.JPG
+2023-03-21 18:49:36,716 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1597.JPG' already exists - ./IMG_1597.JPG
+2023-03-21 18:49:36,756 INFO ======== ./IMG_1598.JPG [177/251]
+2023-03-21 18:49:36,775 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1598.JPG
+2023-03-21 18:49:36,782 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1598.JPG' already exists - ./IMG_1598.JPG
+2023-03-21 18:49:36,819 INFO ======== ./IMG_1599.JPG [178/251]
+2023-03-21 18:49:36,839 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1599.JPG
+2023-03-21 18:49:36,844 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1599.JPG' already exists - ./IMG_1599.JPG
+2023-03-21 18:49:36,871 INFO ======== ./IMG_1605.JPG [179/251]
+2023-03-21 18:49:36,888 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1605.JPG
+2023-03-21 18:49:36,893 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1605.JPG' already exists - ./IMG_1605.JPG
+2023-03-21 18:49:36,927 INFO ======== ./IMG_1606.JPG [180/251]
+2023-03-21 18:49:36,945 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1606.JPG
+2023-03-21 18:49:36,950 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1606.JPG' already exists - ./IMG_1606.JPG
+2023-03-21 18:49:37,068 INFO ======== ./IMG_1611.JPG [182/251]
+2023-03-21 18:49:37,089 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1611.JPG
+2023-03-21 18:49:37,094 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1611.JPG' already exists - ./IMG_1611.JPG
+2023-03-21 18:49:37,148 INFO ======== ./IMG_1612.JPG [183/251]
+2023-03-21 18:49:37,167 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1612.JPG
+2023-03-21 18:49:37,173 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1612.JPG' already exists - ./IMG_1612.JPG
+2023-03-21 18:49:37,197 INFO ======== ./IMG_1614.JPG [184/251]
+2023-03-21 18:49:37,210 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1614.JPG
+2023-03-21 18:49:37,215 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1614.JPG' already exists - ./IMG_1614.JPG
+2023-03-21 18:49:37,262 INFO ======== ./IMG_1615.HEIC [185/251]
+2023-03-21 18:49:37,289 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1615.HEIC
+2023-03-21 18:49:37,295 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1615.HEIC' already exists - ./IMG_1615.HEIC
+2023-03-21 18:49:37,349 INFO ======== ./IMG_1616.HEIC [186/251]
+2023-03-21 18:49:37,377 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1616.HEIC
+2023-03-21 18:49:37,382 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1616.HEIC' already exists - ./IMG_1616.HEIC
+2023-03-21 18:49:37,410 INFO ======== ./IMG_1618.JPG [187/251]
+2023-03-21 18:49:37,430 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1618.JPG
+2023-03-21 18:49:37,435 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1618.JPG' already exists - ./IMG_1618.JPG
+2023-03-21 18:49:37,464 INFO ======== ./IMG_1620.JPG [188/251]
+2023-03-21 18:49:37,482 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1620.JPG
+2023-03-21 18:49:37,487 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1620.JPG' already exists - ./IMG_1620.JPG
+2023-03-21 18:49:37,541 INFO ======== ./IMG_1624.HEIC [189/251]
+2023-03-21 18:49:37,571 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1624.HEIC
+2023-03-21 18:49:37,576 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1624.HEIC' already exists - ./IMG_1624.HEIC
+2023-03-21 18:49:37,595 INFO ======== ./IMG_1625.JPG [190/251]
+2023-03-21 18:49:37,608 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1625.JPG
+2023-03-21 18:49:37,613 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1625.JPG' already exists - ./IMG_1625.JPG
+2023-03-21 18:49:37,651 INFO ======== ./IMG_1626.JPG [191/251]
+2023-03-21 18:49:37,668 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1626.JPG
+2023-03-21 18:49:37,673 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1626.JPG' already exists - ./IMG_1626.JPG
+2023-03-21 18:49:37,708 INFO ======== ./IMG_1627.JPG [192/251]
+2023-03-21 18:49:37,721 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1627.JPG
+2023-03-21 18:49:37,726 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1627.JPG' already exists - ./IMG_1627.JPG
+2023-03-21 18:49:37,761 INFO ======== ./IMG_1628.JPG [193/251]
+2023-03-21 18:49:37,776 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1628.JPG
+2023-03-21 18:49:37,781 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1628.JPG' already exists - ./IMG_1628.JPG
+2023-03-21 18:49:37,840 INFO ======== ./IMG_1632.HEIC [194/251]
+2023-03-21 18:49:37,867 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1632.HEIC
+2023-03-21 18:49:37,872 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1632.HEIC' already exists - ./IMG_1632.HEIC
+2023-03-21 18:49:37,904 INFO ======== ./IMG_1633.HEIC [195/251]
+2023-03-21 18:49:37,928 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1633.HEIC
+2023-03-21 18:49:37,933 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1633.HEIC' already exists - ./IMG_1633.HEIC
+2023-03-21 18:49:37,965 INFO ======== ./IMG_1634.JPG [196/251]
+2023-03-21 18:49:37,985 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1634.JPG
+2023-03-21 18:49:37,991 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1634.JPG' already exists - ./IMG_1634.JPG
+2023-03-21 18:49:38,024 INFO ======== ./IMG_1635.JPG [197/251]
+2023-03-21 18:49:38,040 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1635.JPG
+2023-03-21 18:49:38,045 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1635.JPG' already exists - ./IMG_1635.JPG
+2023-03-21 18:49:38,077 INFO ======== ./IMG_1636.JPG [198/251]
+2023-03-21 18:49:38,092 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1636.JPG
+2023-03-21 18:49:38,097 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1636.JPG' already exists - ./IMG_1636.JPG
+2023-03-21 18:49:38,140 INFO ======== ./IMG_1638.HEIC [199/251]
+2023-03-21 18:49:38,168 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1638.HEIC
+2023-03-21 18:49:38,174 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1638.HEIC' already exists - ./IMG_1638.HEIC
+2023-03-21 18:49:38,388 INFO ======== ./IMG_1642.HEIC [203/251]
+2023-03-21 18:49:38,413 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1642.HEIC
+2023-03-21 18:49:38,417 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1642.HEIC' already exists - ./IMG_1642.HEIC
+2023-03-21 18:49:38,445 INFO ======== ./IMG_1643.JPG [204/251]
+2023-03-21 18:49:38,464 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1643.JPG
+2023-03-21 18:49:38,469 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1643.JPG' already exists - ./IMG_1643.JPG
+2023-03-21 18:49:38,490 INFO ======== ./IMG_1644.JPG [205/251]
+2023-03-21 18:49:38,504 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1644.JPG
+2023-03-21 18:49:38,509 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1644.JPG' already exists - ./IMG_1644.JPG
+2023-03-21 18:49:38,545 INFO ======== ./IMG_1649.JPG [207/251]
+2023-03-21 18:49:38,562 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1649.JPG
+2023-03-21 18:49:38,568 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1649.JPG' already exists - ./IMG_1649.JPG
+2023-03-21 18:49:38,671 INFO ======== ./IMG_1650.PNG [208/251]
+2023-03-21 18:49:38,713 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1650.PNG' already exists - ./IMG_1650.PNG
+2023-03-21 18:49:38,780 INFO ======== ./IMG_1655.JPG [212/251]
+2023-03-21 18:49:38,797 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1655.JPG
+2023-03-21 18:49:38,803 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1655.JPG' already exists - ./IMG_1655.JPG
+2023-03-21 18:49:38,823 INFO ======== ./IMG_1656.JPG [213/251]
+2023-03-21 18:49:38,837 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1656.JPG
+2023-03-21 18:49:38,842 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1656.JPG' already exists - ./IMG_1656.JPG
+2023-03-21 18:49:38,859 INFO ======== ./IMG_1657.JPG [214/251]
+2023-03-21 18:49:38,873 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1657.JPG
+2023-03-21 18:49:38,879 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1657.JPG' already exists - ./IMG_1657.JPG
+2023-03-21 18:49:38,898 INFO ======== ./IMG_1658.JPG [215/251]
+2023-03-21 18:49:38,911 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1658.JPG
+2023-03-21 18:49:38,916 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1658.JPG' already exists - ./IMG_1658.JPG
+2023-03-21 18:49:38,933 INFO ======== ./IMG_1659.JPG [216/251]
+2023-03-21 18:49:38,947 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1659.JPG
+2023-03-21 18:49:38,951 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1659.JPG' already exists - ./IMG_1659.JPG
+2023-03-21 18:49:38,969 INFO ======== ./IMG_1660.JPG [217/251]
+2023-03-21 18:49:38,983 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1660.JPG
+2023-03-21 18:49:38,988 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1660.JPG' already exists - ./IMG_1660.JPG
+2023-03-21 18:49:39,006 INFO ======== ./IMG_1661.JPG [218/251]
+2023-03-21 18:49:39,019 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1661.JPG
+2023-03-21 18:49:39,025 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1661.JPG' already exists - ./IMG_1661.JPG
+2023-03-21 18:49:39,044 INFO ======== ./IMG_1662.JPG [219/251]
+2023-03-21 18:49:39,058 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1662.JPG
+2023-03-21 18:49:39,063 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1662.JPG' already exists - ./IMG_1662.JPG
+2023-03-21 18:49:39,090 INFO ======== ./IMG_1663.HEIC [220/251]
+2023-03-21 18:49:39,111 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1663.HEIC
+2023-03-21 18:49:39,116 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1663.HEIC' already exists - ./IMG_1663.HEIC
+2023-03-21 18:49:39,134 INFO ======== ./IMG_1664.JPG [221/251]
+2023-03-21 18:49:39,147 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1664.JPG
+2023-03-21 18:49:39,151 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1664.JPG' already exists - ./IMG_1664.JPG
+2023-03-21 18:49:39,168 INFO ======== ./IMG_1665.JPG [222/251]
+2023-03-21 18:49:39,182 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1665.JPG
+2023-03-21 18:49:39,187 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1665.JPG' already exists - ./IMG_1665.JPG
+2023-03-21 18:49:39,205 INFO ======== ./IMG_1666.JPG [223/251]
+2023-03-21 18:49:39,219 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1666.JPG
+2023-03-21 18:49:39,223 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1666.JPG' already exists - ./IMG_1666.JPG
+2023-03-21 18:49:39,244 INFO ======== ./IMG_1667.JPG [224/251]
+2023-03-21 18:49:39,259 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1667.JPG
+2023-03-21 18:49:39,264 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1667.JPG' already exists - ./IMG_1667.JPG
+2023-03-21 18:49:39,295 INFO ======== ./IMG_1669.HEIC [225/251]
+2023-03-21 18:49:39,315 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1669.HEIC
+2023-03-21 18:49:39,320 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1669.HEIC' already exists - ./IMG_1669.HEIC
+2023-03-21 18:49:39,348 INFO ======== ./IMG_1670.HEIC [226/251]
+2023-03-21 18:49:39,368 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1670.HEIC
+2023-03-21 18:49:39,373 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1670.HEIC' already exists - ./IMG_1670.HEIC
+2023-03-21 18:49:39,398 INFO ======== ./IMG_1671.HEIC [227/251]
+2023-03-21 18:49:39,418 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1671.HEIC
+2023-03-21 18:49:39,423 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1671.HEIC' already exists - ./IMG_1671.HEIC
+2023-03-21 18:49:39,450 INFO ======== ./IMG_1672.HEIC [228/251]
+2023-03-21 18:49:39,470 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1672.HEIC
+2023-03-21 18:49:39,475 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1672.HEIC' already exists - ./IMG_1672.HEIC
+2023-03-21 18:49:39,500 INFO ======== ./IMG_1673.HEIC [229/251]
+2023-03-21 18:49:39,521 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1673.HEIC
+2023-03-21 18:49:39,526 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1673.HEIC' already exists - ./IMG_1673.HEIC
+2023-03-21 18:49:39,552 INFO ======== ./IMG_1674.HEIC [230/251]
+2023-03-21 18:49:39,572 INFO Warning: [minor] Bad format (16) for MakerNotes entry 14 - ./IMG_1674.HEIC
+2023-03-21 18:49:39,577 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1674.HEIC' already exists - ./IMG_1674.HEIC
+2023-03-21 18:49:39,639 INFO ======== ./IMG_1677.JPG [233/251]
+2023-03-21 18:49:39,663 INFO Warning: [minor] Bad format (16) for MakerNotes entry 10 - ./IMG_1677.JPG
+2023-03-21 18:49:39,669 INFO Error: '/mnt/d/fotos/2023/2023-03/IMG_1677.JPG' already exists - ./IMG_1677.JPG
+2023-03-21 18:49:39,725 INFO ======== ./IMG_1685.HEIC [235/251]
+2023-03-21 18:49:39,752 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1685.HEIC
+2023-03-21 18:49:39,918 INFO Nothing changed in ./IMG_1685.HEIC
+2023-03-21 18:49:39,942 INFO ======== ./IMG_1686.JPG [236/251]
+2023-03-21 18:49:39,962 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1686.JPG
+2023-03-21 18:49:40,168 INFO Nothing changed in ./IMG_1686.JPG
+2023-03-21 18:49:40,200 INFO ======== ./IMG_1687.JPG [237/251]
+2023-03-21 18:49:40,223 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1687.JPG
+2023-03-21 18:49:40,434 INFO Nothing changed in ./IMG_1687.JPG
+2023-03-21 18:49:40,466 INFO ======== ./IMG_1688.JPG [238/251]
+2023-03-21 18:49:40,484 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1688.JPG
+2023-03-21 18:49:40,643 INFO Nothing changed in ./IMG_1688.JPG
+2023-03-21 18:49:40,675 INFO ======== ./IMG_1689.JPG [239/251]
+2023-03-21 18:49:40,692 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1689.JPG
+2023-03-21 18:49:40,945 INFO Nothing changed in ./IMG_1689.JPG
+2023-03-21 18:49:40,964 INFO ======== ./IMG_1690.JPG [240/251]
+2023-03-21 18:49:40,980 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1690.JPG
+2023-03-21 18:49:41,202 INFO Nothing changed in ./IMG_1690.JPG
+2023-03-21 18:49:41,222 INFO ======== ./IMG_1691.JPG [241/251]
+2023-03-21 18:49:41,235 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1691.JPG
+2023-03-21 18:49:41,470 INFO Nothing changed in ./IMG_1691.JPG
+2023-03-21 18:49:41,568 INFO ======== ./IMG_1698.JPG [246/251]
+2023-03-21 18:49:41,584 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1698.JPG
+2023-03-21 18:49:41,756 INFO Nothing changed in ./IMG_1698.JPG
+2023-03-21 18:49:42,000 INFO ======== ./IMG_1700.HEIC [248/251]
+2023-03-21 18:49:42,025 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1700.HEIC
+2023-03-21 18:49:42,961 INFO Nothing changed in ./IMG_1700.HEIC
+2023-03-21 18:49:43,003 INFO ======== ./IMG_1701.HEIC [249/251]
+2023-03-21 18:49:43,028 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1701.HEIC
+2023-03-21 18:49:43,149 INFO Nothing changed in ./IMG_1701.HEIC
+2023-03-21 18:49:43,193 INFO ======== ./IMG_1702.HEIC [250/251]
+2023-03-21 18:49:43,231 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1702.HEIC
+2023-03-21 18:49:43,356 INFO Nothing changed in ./IMG_1702.HEIC
+2023-03-21 18:49:43,395 INFO ======== ./IMG_1703.HEIC [251/251]
+2023-03-21 18:49:43,436 INFO Warning: [minor] Bad format (16) for MakerNotes entry 13 - ./IMG_1703.HEIC
+2023-03-21 18:49:43,551 INFO Nothing changed in ./IMG_1703.HEIC
+2023-03-21 18:49:43,552 INFO 1 directories scanned
+2023-03-21 18:49:43,552 INFO 57 files failed condition
+2023-03-21 18:49:43,552 INFO 0 image files updated
+2023-03-21 18:49:43,552 INFO 12 image files copied
+2023-03-21 18:49:43,553 INFO 182 files weren't updated due to errors
+2023-03-21 18:49:43,560 INFO cd /mnt/d/movil/debora/131APPLE; exiftool -if '$trackcreatedate and not ($trackcreatedate eq "0000:00:00 00:00:00")' -o ./%d "-filename<trackcreatedate" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-21 18:49:44,640 INFO ======== ./IMG_1328.MP4 [42/251]
+2023-03-21 18:49:44,688 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1328.MP4' already exists - ./IMG_1328.MP4
+2023-03-21 18:49:44,903 INFO ======== ./IMG_1341.MP4 [53/251]
+2023-03-21 18:49:44,921 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1341.MP4' already exists - ./IMG_1341.MP4
+2023-03-21 18:49:45,074 INFO ======== ./IMG_1347.MOV [59/251]
+2023-03-21 18:49:45,100 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1347.MOV
+2023-03-21 18:49:45,172 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1347.MOV' already exists - ./IMG_1347.MOV
+2023-03-21 18:49:45,339 INFO ======== ./IMG_1355.MOV [65/251]
+2023-03-21 18:49:45,364 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1355.MOV
+2023-03-21 18:49:45,368 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1355.MOV' already exists - ./IMG_1355.MOV
+2023-03-21 18:49:45,393 INFO ======== ./IMG_1356.MOV [66/251]
+2023-03-21 18:49:45,421 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1356.MOV
+2023-03-21 18:49:45,424 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1356.MOV' already exists - ./IMG_1356.MOV
+2023-03-21 18:49:45,451 INFO ======== ./IMG_1357.MOV [67/251]
+2023-03-21 18:49:45,480 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1357.MOV
+2023-03-21 18:49:45,484 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1357.MOV' already exists - ./IMG_1357.MOV
+2023-03-21 18:49:45,511 INFO ======== ./IMG_1358.MOV [68/251]
+2023-03-21 18:49:45,537 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1358.MOV
+2023-03-21 18:49:45,541 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1358.MOV' already exists - ./IMG_1358.MOV
+2023-03-21 18:49:45,823 INFO ======== ./IMG_1370.MOV [80/251]
+2023-03-21 18:49:45,860 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1370.MOV
+2023-03-21 18:49:45,942 INFO Error: '/mnt/d/fotos/2023/2023-01/IMG_1370.MOV' already exists - ./IMG_1370.MOV
+2023-03-21 18:49:46,637 INFO ======== ./IMG_1502.MP4 [119/251]
+2023-03-21 18:49:46,666 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1502.MP4' already exists - ./IMG_1502.MP4
+2023-03-21 18:49:46,809 INFO ======== ./IMG_1521.MP4 [126/251]
+2023-03-21 18:49:46,836 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1521.MP4' already exists - ./IMG_1521.MP4
+2023-03-21 18:49:47,212 INFO ======== ./IMG_1559.MOV [145/251]
+2023-03-21 18:49:47,237 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1559.MOV
+2023-03-21 18:49:47,241 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1559.MOV' already exists - ./IMG_1559.MOV
+2023-03-21 18:49:47,271 INFO ======== ./IMG_1561.MP4 [147/251]
+2023-03-21 18:49:47,295 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1561.MP4' already exists - ./IMG_1561.MP4
+2023-03-21 18:49:47,312 INFO ======== ./IMG_1562.MP4 [148/251]
+2023-03-21 18:49:47,333 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1562.MP4' already exists - ./IMG_1562.MP4
+2023-03-21 18:49:47,372 INFO ======== ./IMG_1564.MOV [150/251]
+2023-03-21 18:49:47,402 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1564.MOV
+2023-03-21 18:49:47,408 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1564.MOV' already exists - ./IMG_1564.MOV
+2023-03-21 18:49:47,436 INFO ======== ./IMG_1565.MOV [151/251]
+2023-03-21 18:49:47,467 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1565.MOV
+2023-03-21 18:49:47,471 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1565.MOV' already exists - ./IMG_1565.MOV
+2023-03-21 18:49:47,500 INFO ======== ./IMG_1566.MOV [152/251]
+2023-03-21 18:49:47,532 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1566.MOV
+2023-03-21 18:49:47,535 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1566.MOV' already exists - ./IMG_1566.MOV
+2023-03-21 18:49:47,567 INFO ======== ./IMG_1567.MOV [153/251]
+2023-03-21 18:49:47,598 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1567.MOV
+2023-03-21 18:49:47,604 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1567.MOV' already exists - ./IMG_1567.MOV
+2023-03-21 18:49:47,632 INFO ======== ./IMG_1568.MOV [154/251]
+2023-03-21 18:49:47,666 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1568.MOV
+2023-03-21 18:49:47,671 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1568.MOV' already exists - ./IMG_1568.MOV
+2023-03-21 18:49:47,702 INFO ======== ./IMG_1569.MOV [155/251]
+2023-03-21 18:49:47,792 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1569.MOV
+2023-03-21 18:49:47,797 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1569.MOV' already exists - ./IMG_1569.MOV
+2023-03-21 18:49:47,899 INFO ======== ./IMG_1576.MOV [160/251]
+2023-03-21 18:49:47,927 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1576.MOV
+2023-03-21 18:49:47,931 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1576.MOV' already exists - ./IMG_1576.MOV
+2023-03-21 18:49:47,965 INFO ======== ./IMG_1577.MOV [161/251]
+2023-03-21 18:49:47,995 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1577.MOV
+2023-03-21 18:49:48,000 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1577.MOV' already exists - ./IMG_1577.MOV
+2023-03-21 18:49:48,033 INFO ======== ./IMG_1578.MOV [162/251]
+2023-03-21 18:49:48,062 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1578.MOV
+2023-03-21 18:49:48,068 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1578.MOV' already exists - ./IMG_1578.MOV
+2023-03-21 18:49:48,097 INFO ======== ./IMG_1579.MOV [163/251]
+2023-03-21 18:49:48,126 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1579.MOV
+2023-03-21 18:49:48,132 INFO Error: '/mnt/d/fotos/2023/2023-02/IMG_1579.MOV' already exists - ./IMG_1579.MOV
+2023-03-21 18:49:49,448 INFO ======== ./IMG_1699.MOV [247/251]
+2023-03-21 18:49:49,487 INFO Warning: [minor] The ExtractEmbedded option may find more tags in the media data - ./IMG_1699.MOV
+2023-03-21 18:51:11,971 INFO Nothing changed in ./IMG_1699.MOV
+2023-03-21 18:51:12,074 INFO 1 directories scanned
+2023-03-21 18:51:12,074 INFO 227 files failed condition
+2023-03-21 18:51:12,074 INFO 0 image files updated
+2023-03-21 18:51:12,074 INFO 1 image files copied
+2023-03-21 18:51:12,074 INFO 23 files weren't updated due to errors
+2023-03-21 18:51:12,078 INFO cd /mnt/d/movil/debora/131APPLE; exiftool -if '(not $datetimeoriginal or ($datetimeoriginal eq "0000:00:00 00:00:00")) and (not $trackcreatedate or ($trackcreatedate eq "0000:00:00 00:00:00"))' -p '$filename' -q -q .
+2023-03-21 18:51:16,981 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1259.JPG
+2023-03-21 18:51:17,022 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1259.JPG': File exists
+2023-03-21 18:51:17,022 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1301.PNG
+2023-03-21 18:51:17,037 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1301.PNG': File exists
+2023-03-21 18:51:17,037 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1320.JPG
+2023-03-21 18:51:17,055 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1320.JPG': File exists
+2023-03-21 18:51:17,055 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1332.PNG
+2023-03-21 18:51:17,074 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1332.PNG': File exists
+2023-03-21 18:51:17,074 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1372.JPG
+2023-03-21 18:51:17,090 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1372.JPG': File exists
+2023-03-21 18:51:17,090 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1389.PNG
+2023-03-21 18:51:17,106 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1389.PNG': File exists
+2023-03-21 18:51:17,106 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1394.JPG
+2023-03-21 18:51:17,123 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1394.JPG': File exists
+2023-03-21 18:51:17,123 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1419.PNG
+2023-03-21 18:51:17,140 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1419.PNG': File exists
+2023-03-21 18:51:17,141 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1420.PNG
+2023-03-21 18:51:17,158 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1420.PNG': File exists
+2023-03-21 18:51:17,158 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1421.PNG
+2023-03-21 18:51:17,175 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1421.PNG': File exists
+2023-03-21 18:51:17,175 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1503.JPG
+2023-03-21 18:51:17,197 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1503.JPG': File exists
+2023-03-21 18:51:17,198 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1534.JPG
+2023-03-21 18:51:17,217 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1534.JPG': File exists
+2023-03-21 18:51:17,218 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1537.JPG
+2023-03-21 18:51:17,236 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1537.JPG': File exists
+2023-03-21 18:51:17,236 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1538.JPG
+2023-03-21 18:51:17,255 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1538.JPG': File exists
+2023-03-21 18:51:17,255 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1542.JPG
+2023-03-21 18:51:17,274 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1542.JPG': File exists
+2023-03-21 18:51:17,274 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1543.JPG
+2023-03-21 18:51:17,291 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1543.JPG': File exists
+2023-03-21 18:51:17,292 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1544.JPG
+2023-03-21 18:51:17,309 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1544.JPG': File exists
+2023-03-21 18:51:17,309 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1572.PNG
+2023-03-21 18:51:17,326 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1572.PNG': File exists
+2023-03-21 18:51:17,326 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1610.JPG
+2023-03-21 18:51:17,340 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1610.JPG': File exists
+2023-03-21 18:51:17,340 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1639.PNG
+2023-03-21 18:51:17,358 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1639.PNG': File exists
+2023-03-21 18:51:17,358 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1640.PNG
+2023-03-21 18:51:17,381 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1640.PNG': File exists
+2023-03-21 18:51:17,381 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1641.PNG
+2023-03-21 18:51:17,398 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1641.PNG': File exists
+2023-03-21 18:51:17,399 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1645.JPG
+2023-03-21 18:51:17,414 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1645.JPG': File exists
+2023-03-21 18:51:17,414 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1651.JPG
+2023-03-21 18:51:17,429 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1651.JPG': File exists
+2023-03-21 18:51:17,430 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1653.JPG
+2023-03-21 18:51:17,462 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1653.JPG': File exists
+2023-03-21 18:51:17,462 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1654.PNG
+2023-03-21 18:51:17,477 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1654.PNG': File exists
+2023-03-21 18:51:17,478 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1675.JPG
+2023-03-21 18:51:17,492 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1675.JPG': File exists
+2023-03-21 18:51:17,492 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1676.JPG
+2023-03-21 18:51:17,507 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG_1676.JPG': File exists
+2023-03-21 18:51:17,507 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1678.PNG
+2023-03-21 18:51:17,521 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1694.JPG
+2023-03-21 18:51:17,536 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1695.JPG
+2023-03-21 18:51:17,549 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1696.JPG
+2023-03-21 18:51:17,563 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/debora/131APPLE/IMG_1697.JPG
+2023-03-21 18:51:17,580 INFO Sincronizado /mnt/d/movil/debora/131APPLE con fecha de modificación: 2023-03-21 08:31:02
+2023-03-21 18:51:17,650 INFO Sincronizando /mnt/d/movil/jose/whatsapp/pictures
+2023-03-21 18:51:17,650 INFO cd /mnt/d/movil/jose/whatsapp/pictures; exiftool -if '$datetimeoriginal and not ($datetimeoriginal eq "0000:00:00 00:00:00")' -o ./%d "-filename<datetimeoriginal" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-21 18:51:18,705 INFO 1 directories scanned
+2023-03-21 18:51:18,706 INFO 20 files failed condition
+2023-03-21 18:51:18,706 INFO 0 image files read
+2023-03-21 18:51:18,710 INFO cd /mnt/d/movil/jose/whatsapp/pictures; exiftool -if '$trackcreatedate and not ($trackcreatedate eq "0000:00:00 00:00:00")' -o ./%d "-filename<trackcreatedate" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-21 18:51:18,999 INFO 1 directories scanned
+2023-03-21 18:51:18,999 INFO 20 files failed condition
+2023-03-21 18:51:19,000 INFO 0 image files read
+2023-03-21 18:51:19,003 INFO cd /mnt/d/movil/jose/whatsapp/pictures; exiftool -if '(not $datetimeoriginal or ($datetimeoriginal eq "0000:00:00 00:00:00")) and (not $trackcreatedate or ($trackcreatedate eq "0000:00:00 00:00:00"))' -p '$filename' -q -q .
+2023-03-21 18:51:19,336 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0002(1).jpg
+2023-03-21 18:51:19,339 ERROR /bin/sh: 1: Syntax error: "(" unexpected
+2023-03-21 18:51:19,340 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0002.jpg
+2023-03-21 18:51:19,356 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0003.jpg
+2023-03-21 18:51:19,370 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0004.jpg
+2023-03-21 18:51:19,402 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0005.jpg
+2023-03-21 18:51:19,428 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0006.jpg
+2023-03-21 18:51:19,448 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0007.jpg
+2023-03-21 18:51:19,465 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0008.jpg
+2023-03-21 18:51:19,483 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0009.jpg
+2023-03-21 18:51:19,501 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0010.jpg
+2023-03-21 18:51:19,519 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0011.jpg
+2023-03-21 18:51:19,537 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0012.jpg
+2023-03-21 18:51:19,559 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0013.jpg
+2023-03-21 18:51:19,579 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0014.jpg
+2023-03-21 18:51:19,601 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0015.jpg
+2023-03-21 18:51:19,624 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0016.jpg
+2023-03-21 18:51:19,646 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0017.jpg
+2023-03-21 18:51:19,669 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0018.jpg
+2023-03-21 18:51:19,692 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230318-WA0003.jpg
+2023-03-21 18:51:19,717 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230318-WA0004.jpg
+2023-03-21 18:51:19,744 INFO Sincronizado /mnt/d/movil/jose/whatsapp/pictures con fecha de modificación: 2023-03-21 15:29:57
+2023-03-21 18:56:10,759 INFO Sincronizando /mnt/d/movil/jose/whatsapp/pictures
+2023-03-21 18:56:10,759 INFO cd /mnt/d/movil/jose/whatsapp/pictures; exiftool -if '$datetimeoriginal and not ($datetimeoriginal eq "0000:00:00 00:00:00")' -o ./%d "-filename<datetimeoriginal" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-21 18:56:11,152 INFO 1 directories scanned
+2023-03-21 18:56:11,153 INFO 19 files failed condition
+2023-03-21 18:56:11,153 INFO 0 image files read
+2023-03-21 18:56:11,157 INFO cd /mnt/d/movil/jose/whatsapp/pictures; exiftool -if '$trackcreatedate and not ($trackcreatedate eq "0000:00:00 00:00:00")' -o ./%d "-filename<trackcreatedate" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
+2023-03-21 18:56:11,436 INFO 1 directories scanned
+2023-03-21 18:56:11,436 INFO 19 files failed condition
+2023-03-21 18:56:11,436 INFO 0 image files read
+2023-03-21 18:56:11,440 INFO cd /mnt/d/movil/jose/whatsapp/pictures; exiftool -if '(not $datetimeoriginal or ($datetimeoriginal eq "0000:00:00 00:00:00")) and (not $trackcreatedate or ($trackcreatedate eq "0000:00:00 00:00:00"))' -p '$filename' -q -q .
+2023-03-21 18:56:11,733 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0002.jpg
+2023-03-21 18:56:11,752 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0002.jpg': File exists
+2023-03-21 18:56:11,752 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0003.jpg
+2023-03-21 18:56:11,769 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0003.jpg': File exists
+2023-03-21 18:56:11,769 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0004.jpg
+2023-03-21 18:56:11,786 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0004.jpg': File exists
+2023-03-21 18:56:11,786 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0005.jpg
+2023-03-21 18:56:11,804 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0005.jpg': File exists
+2023-03-21 18:56:11,805 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0006.jpg
+2023-03-21 18:56:11,825 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0006.jpg': File exists
+2023-03-21 18:56:11,825 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0007.jpg
+2023-03-21 18:56:11,841 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0007.jpg': File exists
+2023-03-21 18:56:11,841 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0008.jpg
+2023-03-21 18:56:11,863 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0008.jpg': File exists
+2023-03-21 18:56:11,863 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0009.jpg
+2023-03-21 18:56:11,888 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0009.jpg': File exists
+2023-03-21 18:56:11,888 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0010.jpg
+2023-03-21 18:56:11,905 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0010.jpg': File exists
+2023-03-21 18:56:11,905 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0011.jpg
+2023-03-21 18:56:11,924 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0011.jpg': File exists
+2023-03-21 18:56:11,924 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0012.jpg
+2023-03-21 18:56:11,946 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0012.jpg': File exists
+2023-03-21 18:56:11,947 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0013.jpg
+2023-03-21 18:56:11,970 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0013.jpg': File exists
+2023-03-21 18:56:11,970 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0014.jpg
+2023-03-21 18:56:11,992 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0014.jpg': File exists
+2023-03-21 18:56:11,992 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0015.jpg
+2023-03-21 18:56:12,015 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0015.jpg': File exists
+2023-03-21 18:56:12,015 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0016.jpg
+2023-03-21 18:56:12,035 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0016.jpg': File exists
+2023-03-21 18:56:12,036 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0017.jpg
+2023-03-21 18:56:12,059 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0017.jpg': File exists
+2023-03-21 18:56:12,060 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230130-WA0018.jpg
+2023-03-21 18:56:12,085 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230130-WA0018.jpg': File exists
+2023-03-21 18:56:12,085 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230318-WA0003.jpg
+2023-03-21 18:56:12,107 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230318-WA0003.jpg': File exists
+2023-03-21 18:56:12,107 INFO ln -t /mnt/d/fotos/SIN_FECHA /mnt/d/movil/jose/whatsapp/pictures/IMG-20230318-WA0004.jpg
+2023-03-21 18:56:12,127 ERROR ln: failed to create hard link '/mnt/d/fotos/SIN_FECHA/IMG-20230318-WA0004.jpg': File exists
+2023-03-21 18:56:12,127 INFO Sincronizado /mnt/d/movil/jose/whatsapp/pictures con fecha de modificación: 2023-03-21 18:56:01
