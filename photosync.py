@@ -7,7 +7,7 @@ from datetime import datetime
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
-logpath = '~/photosync/logs'
+logpath = '~/.cache/photosync/logs'
 logfilename = 'photosync.log'
 
 logpath = os.path.expanduser(logpath)
