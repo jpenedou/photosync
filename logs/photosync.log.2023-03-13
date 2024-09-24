@@ -1,9 +1,0 @@
-2023-03-13 19:07:18,016 INFO Sincronizando /mnt/d/movil/debora
-2023-03-13 19:07:18,017 INFO cd /mnt/d/movil/debora; exiftool -if '$datetimeoriginal and not ($datetimeoriginal eq "0000:00:00 00:00:00")' -o ./%d "-filename<datetimeoriginal" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
-2023-03-13 19:07:18,291 INFO 1 directories scanned
-2023-03-13 19:07:18,291 INFO 0 image files read
-2023-03-13 19:07:18,294 INFO cd /mnt/d/movil/debora; exiftool -if '$trackcreatedate and not ($trackcreatedate eq "0000:00:00 00:00:00")' -o ./%d "-filename<trackcreatedate" -d /mnt/d/fotos/%Y/%Y-%m/%%f.%%e  -progress .
-2023-03-13 19:07:18,510 INFO 1 directories scanned
-2023-03-13 19:07:18,511 INFO 0 image files read
-2023-03-13 19:07:18,516 INFO cd /mnt/d/movil/debora; exiftool -if '(not $datetimeoriginal or ($datetimeoriginal eq "0000:00:00 00:00:00")) and (not $trackcreatedate or ($trackcreatedate eq "0000:00:00 00:00:00"))' -p '$filename' -q -q .
-2023-03-13 19:07:18,613 INFO Sincronizado /mnt/d/movil/debora con fecha de modificación: 2023-03-13 15:27:27
