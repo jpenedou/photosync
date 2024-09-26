@@ -71,7 +71,8 @@ def entorno_de_prueba():
 
     # Limpiar directorios después de la prueba
     shutil.rmtree(settings.SOURCE_PATHS)
-    shutil.rmtree(settings.TAGNAME_NOTFOUND_PATH)
+    if os.path.exists(settings.TAGNAME_NOTFOUND_PATH):
+        shutil.rmtree(settings.TAGNAME_NOTFOUND_PATH)
     shutil.rmtree(settings.TARGET_PATH)
 
 
