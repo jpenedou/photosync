@@ -151,9 +151,9 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
             if os.path.exists(archivo_nuevo):
                 # Eliminar el archivo existente después de una copia exitosa
                 os.remove(archivo_existente)
-                logger.info(f"{nombre_original} copiado a: {archivo_nuevo} y eliminado el archivo existente: {archivo_existente}")
+                logger.info(f"{nombre_original} --> {archivo_nuevo} OK. Eliminado el archivo original existente: {archivo_existente}")
             else:
-                logger.error(f"{nombre_original} no se pudo copiar a: {archivo_nuevo}")
+                logger.error(f"{nombre_original} --> {archivo_nuevo} ERROR")
         else:
             logger.warning(f"{nombre_original} ya existe con diferente contenido en: {archivo_existente}")
     else:
@@ -164,7 +164,7 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
         # Copiar el archivo si no existe en la nueva ruta
         shutil.copy2(archivo, archivo_nuevo)  # shutil.copy2 mantiene los metadatos
 
-        logger.info(f"{nombre_original} copiado a: {archivo_nuevo}")
+        logger.info(f"{nombre_original} --> {archivo_nuevo} OK")
 
 
 # Función para crear un enlace duro
@@ -189,7 +189,7 @@ def crear_enlace_duro(archivo, links_path):
 
     try:
         os.link(archivo, enlace_nuevo)
-        logger.info(f"{os.path.basename(archivo)} enlace duro creado en: {enlace_nuevo}")
+        logger.info(f"{os.path.basename(archivo)} --> {enlace_nuevo}")
     except Exception as e:
         logger.error(f"{os.path.basename(archivo)} no se pudo crear el enlace duro: {e}")
 
