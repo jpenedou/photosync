@@ -151,9 +151,9 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
             if os.path.exists(archivo_nuevo):
                 # Eliminar el archivo existente después de una copia exitosa
                 os.remove(archivo_existente)
-                logger.info(f"{nombre_original} --> {archivo_nuevo} OK. Eliminado el archivo original existente: {archivo_existente}")
+                logger.info(f"{nombre_original} --> {archivo_nuevo} Eliminado el archivo original existente: {archivo_existente}")
             else:
-                logger.error(f"{nombre_original} --> {archivo_nuevo} ERROR")
+                logger.error(f"{nombre_original} --> {archivo_nuevo}")
         else:
             logger.warning(f"{nombre_original} ya existe con diferente contenido en: {archivo_existente}")
     else:
@@ -164,7 +164,7 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
         # Copiar el archivo si no existe en la nueva ruta
         shutil.copy2(archivo, archivo_nuevo)  # shutil.copy2 mantiene los metadatos
 
-        logger.info(f"{nombre_original} --> {archivo_nuevo} OK")
+        logger.info(f"{nombre_original} --> {archivo_nuevo}")
 
 
 # Función para crear un enlace duro
@@ -189,7 +189,7 @@ def crear_enlace_duro(archivo, links_path):
 
     try:
         os.link(archivo, enlace_nuevo)
-        logger.info(f"{os.path.basename(archivo)} --> {enlace_nuevo}")
+        logger.info(f"{os.path.basename(archivo)} --link-> {enlace_nuevo}")
     except Exception as e:
         logger.error(f"{os.path.basename(archivo)} no se pudo crear el enlace duro: {e}")
 
@@ -210,29 +210,29 @@ def process_files(base_path, target_path="./", links_path="./links"):
         base_path_sync_time = datetime.strptime(sync_times[base_path], time_format)
 
     # Iterar sobre todos los archivos en base_path
-    for raiz, _, archivos in os.walk(base_path):
-        for archivo in archivos:
-            archivo_path = os.path.join(raiz, archivo)
-            # Verificar el tiempo de modificación del archivo
-            archivo_changed_time = obtener_changed_time(archivo_path)
+    archivos = [entrada.name for entrada in os.scandir(base_path) if entrada.is_file()]
+    for archivo in archivos:
+        archivo_path = os.path.join(base_path, archivo)
+        # Verificar el tiempo de modificación del archivo
+        archivo_changed_time = obtener_changed_time(archivo_path)
 
-            if base_path_sync_time is None or archivo_changed_time >= base_path_sync_time:
-                mime_type = detectar_tipo_archivo(archivo_path)
+        if base_path_sync_time is None or archivo_changed_time >= base_path_sync_time:
+            mime_type = detectar_tipo_archivo(archivo_path)
 
-                if "image" in mime_type or "video" in mime_type:
-                    fecha_formateada, fecha = obtener_fecha_exif(archivo_path)
+            if "image" in mime_type or "video" in mime_type:
+                fecha_formateada, fecha = obtener_fecha_exif(archivo_path)
 
-                    if fecha:
-                        nueva_ruta = construir_nueva_ruta(target_path, fecha)
-                        nuevo_nombre = renombrar_archivo(archivo_path, fecha_formateada)
-                        copiar_y_renombrar_archivo(archivo_path, nueva_ruta, nuevo_nombre)
-                    else:
-                        # Crear enlace duro si la fecha no existe
-                        crear_enlace_duro(archivo_path, links_path)
+                if fecha:
+                    nueva_ruta = construir_nueva_ruta(target_path, fecha)
+                    nuevo_nombre = renombrar_archivo(archivo_path, fecha_formateada)
+                    copiar_y_renombrar_archivo(archivo_path, nueva_ruta, nuevo_nombre)
                 else:
-                    logger.warning(f"{archivo} no es una imagen ni un video.")
+                    # Crear enlace duro si la fecha no existe
+                    crear_enlace_duro(archivo_path, links_path)
             else:
-                logger.info(f"{archivo} se omite, no se ha modificado (ctime: {archivo_changed_time})")
+                logger.warning(f"{archivo} no es una imagen ni un video.")
+        else:
+            logger.info(f"{archivo} se omite, no se ha modificado (ctime: {archivo_changed_time})")
 
     sync_times[base_path] = base_path_changed_time.strftime(time_format)
 

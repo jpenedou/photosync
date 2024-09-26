@@ -58,6 +58,8 @@ def entorno_de_prueba():
     settings.SOURCE_PATHS = os.path.abspath("./test/movil")
     settings.TARGET_PATH = os.path.abspath("./test/fotos")
     settings.TAGNAME_NOTFOUND_PATH = os.path.abspath("./test/fotos/sin_fecha")
+    # TODO: Este fichero no se crea durane la ejecución de los tests, no se llama a save_sync_times
+    settings.LAST_SYNC_TIME_PATH = "./test/.photosync_last.json"
     media_path = os.path.abspath("./test/media")
 
     # Crear directorios

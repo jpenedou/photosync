@@ -1,6 +1,7 @@
 from photosync import settings, main
 
 if __name__ == "__main__":
+    main.logger.info("Photosync iniciado")
     try:
         main.sync_times = main.load_sync_times()
     except Exception:
@@ -10,3 +11,5 @@ if __name__ == "__main__":
 
     for path in settings.SOURCE_PATHS:
         main.process_folder(path)
+
+    main.logger.info("Photosync finalizado")
