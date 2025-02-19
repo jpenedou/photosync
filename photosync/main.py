@@ -210,6 +210,7 @@ def process_files(base_path, target_path="./", links_path="./links"):
         base_path_sync_time = datetime.strptime(sync_times[base_path], time_format)
 
     # Iterar sobre todos los archivos en base_path
+    # TODO: ordenar los archivos por nombre
     archivos = [entrada.name for entrada in os.scandir(base_path) if entrada.is_file()]
     for archivo in archivos:
         archivo_path = os.path.join(base_path, archivo)
@@ -263,6 +264,7 @@ def process_folder(path):
         if path in sync_times:
             logger.info(f"{path} se omite, ya ha sido sincronizado")
 
+    # TODO: ordenar los directorios por nombre
     with os.scandir(path) as files:
         subdirectories = [file.path for file in files if file.is_dir() and not file.name.startswith(".")]
 
