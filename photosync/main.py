@@ -46,8 +46,10 @@ sync_times: Dict[str, str] = {}
 # Función para detectar el tipo de archivo con el comando file
 def detectar_tipo_archivo(archivo):
     resultado = subprocess.run(["file", "--mime-type", archivo], stdout=subprocess.PIPE, text=True)
-    mime_type = resultado.stdout.strip().split(": ")[1]
-    return mime_type
+    parts = resultado.stdout.strip().split(": ")
+    if len(parts) > 1:
+        return parts[1]
+    return ""
 
 
 # Función para obtener la fecha de captura o creación con exiftool
