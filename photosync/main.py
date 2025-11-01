@@ -19,8 +19,7 @@ logpath = os.path.expanduser(logpath)
 if not os.path.exists(logpath):
     os.makedirs(logpath)
 
-if not os.path.exists(settings.TAGNAME_NOTFOUND_PATH):
-    os.makedirs(settings.TAGNAME_NOTFOUND_PATH)
+
 
 # format the log entries
 formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")

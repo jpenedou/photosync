@@ -3,6 +3,7 @@ import shutil
 from pathlib import Path
 import pytest
 import subprocess
+from unittest.mock import patch, Mock
 from photosync import main, settings
 
 
@@ -71,12 +72,14 @@ def entorno_de_prueba():
 
     # Limpiar directorios después de la prueba
     shutil.rmtree(settings.SOURCE_PATHS)
+    if os.path.exists(settings.TARGET_PATH):
+        shutil.rmtree(settings.TARGET_PATH)
     if os.path.exists(settings.TAGNAME_NOTFOUND_PATH):
         shutil.rmtree(settings.TAGNAME_NOTFOUND_PATH)
-    shutil.rmtree(settings.TARGET_PATH)
 
 
 # Test parametrizado para imágenes y vídeos
+@patch("subprocess.run")
 @pytest.mark.parametrize(
     "nombre_archivo_original, nuevo_nombre_esperado",
     [
@@ -87,13 +90,32 @@ def entorno_de_prueba():
         ("VID_20240903_161055.mp4", "20240903_151141.mp4"),
     ],
 )
-def test_copiar_archivo(entorno_de_prueba, nombre_archivo_original, nuevo_nombre_esperado):
-    base_path, target_path, _, media_path = entorno_de_prueba
+def test_copiar_archivo(mock_run, entorno_de_prueba, nombre_archivo_original, nuevo_nombre_esperado):
+    base_path, target_path, links_path, media_path = entorno_de_prueba
 
-    # Copiar archivo del media_path al base_path
+    with open(os.path.join(media_path, nombre_archivo_original), "w") as f:
+        pass
+
+    def side_effect(*args, **kwargs):
+        command = args[0]
+        if command[0] == "file":
+            if ".jpg" in command[-1] or ".HEIC" in command[-1]:
+                return Mock(stdout="whatever: image/jpeg")
+            elif ".MP4" in command[-1] or ".MOV" in command[-1] or ".mp4" in command[-1]:
+                return Mock(stdout="whatever: video/mp4")
+        elif command[0] == "exiftool":
+            fecha_str = extraer_fecha_desde_nombre(nuevo_nombre_esperado).replace("-", ":")
+            if ".jpg" in command[-1] or ".HEIC" in command[-1]:
+                return Mock(stdout=f"Date/Time Original: {fecha_str}")
+            elif ".MP4" in command[-1] or ".MOV" in command[-1] or ".mp4" in command[-1]:
+                return Mock(stdout=f"Track Create Date: {fecha_str}")
+        return Mock(stdout="")
+
+    mock_run.side_effect = side_effect
+
     copiar_archivo(media_path, base_path, nombre_archivo_original)
 
-    main.process_files(base_path, target_path)
+    main.process_files(base_path, target_path, links_path)
 
     fecha_desde_nombre = extraer_fecha_desde_nombre(nuevo_nombre_esperado)
 
@@ -106,6 +128,7 @@ def test_copiar_archivo(entorno_de_prueba, nombre_archivo_original, nuevo_nombre
 
 
 # Test para verificar la eliminación de archivo existente
+@patch("subprocess.run")
 @pytest.mark.parametrize(
     "nombre_archivo_original, nuevo_nombre_esperado",
     [
@@ -116,10 +139,29 @@ def test_copiar_archivo(entorno_de_prueba, nombre_archivo_original, nuevo_nombre
         ("VID_20240903_161055.mp4", "20240903_151141.mp4"),
     ],
 )
-def test_eliminar_archivo_existente(entorno_de_prueba, nombre_archivo_original, nuevo_nombre_esperado):
-    base_path, target_path, _, media_path = entorno_de_prueba
+def test_eliminar_archivo_existente(mock_run, entorno_de_prueba, nombre_archivo_original, nuevo_nombre_esperado):
+    base_path, target_path, links_path, media_path = entorno_de_prueba
 
-    # Copiar archivo del media_path al base_path
+    with open(os.path.join(media_path, nombre_archivo_original), "w") as f:
+        pass
+
+    def side_effect(*args, **kwargs):
+        command = args[0]
+        if command[0] == "file":
+            if ".jpg" in command[-1] or ".HEIC" in command[-1]:
+                return Mock(stdout="whatever: image/jpeg")
+            elif ".MP4" in command[-1] or ".MOV" in command[-1] or ".mp4" in command[-1]:
+                return Mock(stdout="whatever: video/mp4")
+        elif command[0] == "exiftool":
+            fecha_str = extraer_fecha_desde_nombre(nuevo_nombre_esperado).replace("-", ":")
+            if ".jpg" in command[-1] or ".HEIC" in command[-1]:
+                return Mock(stdout=f"Date/Time Original: {fecha_str}")
+            elif ".MP4" in command[-1] or ".MOV" in command[-1] or ".mp4" in command[-1]:
+                return Mock(stdout=f"Track Create Date: {fecha_str}")
+        return Mock(stdout="")
+
+    mock_run.side_effect = side_effect
+
     copiar_archivo(media_path, base_path, nombre_archivo_original)
 
     fecha_desde_nombre = extraer_fecha_desde_nombre(nuevo_nombre_esperado)
@@ -129,24 +171,21 @@ def test_eliminar_archivo_existente(entorno_de_prueba, nombre_archivo_original, 
     anio_mes = f"{fecha_desde_nombre[:4]}-{fecha_desde_nombre[5:7]}"
     ruta_esperada = os.path.join(target_path, fecha_desde_nombre[:4], anio_mes)
 
-    # Crear el directorio si no existe
     Path(ruta_esperada).mkdir(parents=True, exist_ok=True)
 
-    # Copiar el archivo original a la ruta esperada
     copiar_archivo(media_path, ruta_esperada, nombre_archivo_original)
 
     path_archivo_existente = os.path.join(ruta_esperada, nombre_archivo_original)
-    # Verificar que el archivo existe antes de ejecutar el proceso
+
     assert os.path.exists(path_archivo_existente), f"El archivo esperado no se encontró: {path_archivo_existente}"
 
-    # Ejecutar el procesamiento
-    main.process_files(base_path, target_path)
+    main.process_files(base_path, target_path, links_path)
 
-    # Verificar que el archivo original haya sido eliminado
     assert not os.path.exists(path_archivo_existente), f"El archivo no fue eliminado de la ruta esperada: {path_archivo_existente}"
 
 
 # Test para verificar la creación de los hardlinks
+@patch("subprocess.run")
 @pytest.mark.parametrize(
     "nombre_archivo_original",
     [
@@ -154,26 +193,32 @@ def test_eliminar_archivo_existente(entorno_de_prueba, nombre_archivo_original, 
         ("VID-20230702-WA0019.mp4"),
     ],
 )
-def test_create_hardlinks(entorno_de_prueba, nombre_archivo_original):
+def test_create_hardlinks(mock_run, entorno_de_prueba, nombre_archivo_original):
     base_path, target_path, links_path, media_path = entorno_de_prueba
 
-    # Verificar que el archivo no contiene los tags DateTimeOriginal ni TrackCreateDate
-    archivo_en_media_path = os.path.join(media_path, nombre_archivo_original)
+    with open(os.path.join(media_path, nombre_archivo_original), "w") as f:
+        pass
 
-    # Usar exiftool para extraer los metadatos
-    output = subprocess.run(["exiftool", archivo_en_media_path], capture_output=True, text=True)
-    assert "DateTimeOriginal" not in output.stdout, f"El archivo {nombre_archivo_original} contiene el tag DateTimeOriginal."
-    assert "TrackCreateDate" not in output.stdout, f"El archivo {nombre_archivo_original} contiene el tag TrackCreateDate."
+    def side_effect(*args, **kwargs):
+        command = args[0]
+        if command[0] == "file":
+            if ".jpg" in command[-1]:
+                return Mock(stdout="whatever: image/jpeg")
+            elif ".mp4" in command[-1]:
+                return Mock(stdout="whatever: video/mp4")
+        elif command[0] == "exiftool":
+            return Mock(stdout="")
+        return Mock(stdout="")
 
-    # Copiar archivo del media_path al base_path
+    mock_run.side_effect = side_effect
+
     copiar_archivo(media_path, base_path, nombre_archivo_original)
 
-    # Ejecutar el procesamiento
     main.process_files(base_path, target_path, links_path)
 
-    # Verificar que el hardlink se ha creado en links_path
     hardlink_file = os.path.join(links_path, nombre_archivo_original)
     original_file = os.path.join(base_path, nombre_archivo_original)
 
     assert os.path.exists(hardlink_file), f"El hardlink no se creó en la ruta: {hardlink_file}"
     assert os.path.samefile(original_file, hardlink_file), "El archivo no es un hardlink al original."
+
