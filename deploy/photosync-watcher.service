@@ -1,0 +1,16 @@
+[Unit]
+Description=PhotoSync Watcher (user)
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/photosync/photosync.env
+ExecStart=/usr/bin/python3 %h/.local/bin/photosync-watcher.py
+SyslogIdentifier=photosync
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+# photosync-run - Runner one-shot para PhotoSync (usa PYTHONPATH)
+import os
+import sys
+import logging
+from pathlib import Path
+
+logger = logging.getLogger("photosync-run")
+if not logger.handlers:
+    h = logging.StreamHandler()
+    h.setFormatter(logging.Formatter("%(asctime)s %(levelname)s: %(message)s"))
+    logger.addHandler(h)
+logger.propagate = False
+logger.setLevel(logging.INFO)
+
+
+def main():
+    # Import using the standard package layout. PYTHONPATH in the service must include the package parent and photosync dir.
+    try:
+        from photosync import settings
+        import photosync.main as ps_main
+
+        logger.info("Imported photosync via standard import.")
+    except Exception as e:
+        logger.exception("Failed to import photosync via standard import: %s", e)
+        sys.exit(2)
+
+    # Cargar tiempos de última sincronización si es posible
+    try:
+        ps_main.sync_times = ps_main.load_sync_times()
+        logger.info("Loaded sync_times: %r", ps_main.sync_times)
+    except Exception:
+        logger.warning("No se pudo cargar LAST_SYNC_TIME_PATH; se realizará una sincronización completa si no existen marcas previas.")
+        ps_main.sync_times = {}
+        logger.info("Initialized empty sync_times")
+
+    logger.info(f"settings.SOURCE_PATHS={getattr(settings, 'SOURCE_PATHS', None)}")
+    logger.info(f"settings.TARGET_PATH={getattr(settings, 'TARGET_PATH', None)}")
+    logger.info(f"settings.TAGNAME_NOTFOUND_PATH={getattr(settings, 'TAGNAME_NOTFOUND_PATH', None)}")
+    logger.info(f"settings.LAST_SYNC_TIME_PATH={getattr(settings, 'LAST_SYNC_TIME_PATH', None)}")
+    sp = getattr(settings, "SOURCE_PATHS", ())
+    if isinstance(sp, str):
+        paths = [sp]
+    else:
+        paths = list(sp)
+
+    if not paths:
+        logger.warning("No hay rutas de origen definidas (PHOTOSYNC_SOURCE_PATHS/settings.SOURCE_PATHS); no se realiza sincronización.")
+        logger.info("Define PHOTOSYNC_SOURCE_PATHS en ~/.config/photosync/photosync.env para configurar rutas de origen.")
+        sys.exit(0)
+
+    for p in paths:
+        if not os.path.exists(p):
+            logger.warning(f"Ruta de origen no existe: {p}")
+            continue
+        try:
+            logger.info(f"Iniciando sincronización: {p}")
+            ps_main.process_folder(p)
+        except Exception:
+            logger.exception(f"Error sincronizando: {p}")
+    logger.info("Sincronización finalizada.")
+
+
+if __name__ == "__main__":
+    main()
