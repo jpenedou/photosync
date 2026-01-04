@@ -218,6 +218,7 @@ Type=simple
 EnvironmentFile=%h/.config/photosync/photosync.env
 Environment=PATH=$EXT_PATH
 ExecStart=/usr/bin/python3 %h/.local/bin/photosync-watcher.py
+SyslogIdentifier=photosync
 Restart=always
 RestartSec=5
 StandardOutput=journal
