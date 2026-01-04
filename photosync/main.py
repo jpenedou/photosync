@@ -8,7 +8,7 @@ import subprocess
 from datetime import datetime
 from typing import Dict
 from logging.handlers import TimedRotatingFileHandler
-from photosync import settings
+from . import settings
 
 # TODO: mover a settings.py
 logpath = "~/.cache/photosync/logs"
@@ -20,9 +20,8 @@ if not os.path.exists(logpath):
     os.makedirs(logpath)
 
 
-
 # format the log entries
-formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+formatter = logging.Formatter("%(asctime)s %(levelname)s: %(message)s")
 
 handler = TimedRotatingFileHandler(logpath + "/" + logfilename, when="midnight", backupCount=30)
 handler.setFormatter(formatter)
@@ -34,6 +33,8 @@ logger = logging.getLogger(__name__)
 logger.addHandler(handler)
 logger.addHandler(consoleHandler)
 logger.setLevel(logging.DEBUG)
+logger.propagate = False
+
 
 # TODO: revisar si la fecha es UTC para las dos tags
 time_format = "%Y-%m-%d %H:%M:%S"
@@ -139,6 +140,32 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
         if os.path.exists(archivo_nuevo):
             return hash_archivo == calcular_hash_archivo(archivo_nuevo)
 
+    # Respectar DRY_RUN si está activado
+    if getattr(settings, "DRY_RUN", False):
+        if os.path.exists(archivo_existente):
+            # Comparar contenido de los archivos
+            try:
+                if hash_archivo == calcular_hash_archivo(archivo_existente):
+                    if comprobar_si_sincronizado(hash_archivo, archivo_nuevo):
+                        logger.info(f"(DRY) {nombre_original} se omite, ya sincronizado en: {archivo_nuevo}")
+                    else:
+                        logger.info(f"(DRY) Se detectó archivo existente con mismo contenido. Se propondría copiar {archivo} -> {archivo_nuevo} y eliminar {archivo_existente} después de la copia")
+                else:
+                    logger.info(f"(DRY) {nombre_original} ya existe con diferente contenido en: {archivo_existente}; se propondría copiar {archivo} -> {archivo_nuevo}")
+            except Exception:
+                logger.exception(f"(DRY) Error evaluando la acción de copia para: {archivo}")
+        else:
+            try:
+                if comprobar_si_sincronizado(hash_archivo, archivo_nuevo):
+                    logger.info(f"(DRY) {nombre_original} se omite, ya sincronizado en: {archivo_nuevo}")
+                    return
+
+                # Indicar que se copiaría el archivo
+                logger.info(f"(DRY) Se propondría copiar {archivo} -> {archivo_nuevo}")
+            except Exception:
+                logger.exception(f"(DRY) Error evaluando la acción de copia para: {archivo}")
+        return
+
     if os.path.exists(archivo_existente):
         # Comparar contenido de los archivos
         if hash_archivo == calcular_hash_archivo(archivo_existente):
@@ -183,6 +210,10 @@ def crear_enlace_duro(archivo, links_path):
     enlace_nuevo = os.path.join(links_path, os.path.basename(archivo))
 
     os.makedirs(links_path, exist_ok=True)  # Crear directorios si no existen
+
+    if getattr(settings, "DRY_RUN", False):
+        logger.info(f"(DRY) Se propondría crear enlace duro: {archivo} -> {enlace_nuevo}")
+        return
 
     if os.path.exists(enlace_nuevo):
         logger.warning(f"{os.path.basename(archivo)} ya tiene un enlace duro en: {enlace_nuevo}")
@@ -281,8 +312,22 @@ def load_sync_times():
 
 # Guarda las fechas de la última sincronización
 def save_sync_times():
-    with open(os.path.expanduser(settings.LAST_SYNC_TIME_PATH), "w") as f:
-        return json.dump(sync_times, f)
+    # Respectar DRY_RUN
+    if getattr(settings, "DRY_RUN", False):
+        try:
+            logger.info("(DRY) save_sync_times would write to %s: %r", settings.LAST_SYNC_TIME_PATH, sync_times)
+        except Exception:
+            logger.info("(DRY) save_sync_times would write sync_times (failed to render value)")
+        return
+
+    try:
+        path = os.path.expanduser(settings.LAST_SYNC_TIME_PATH)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w") as f:
+            json.dump(sync_times, f, indent=2)
+        logger.info("save_sync_times wrote to %s", path)
+    except Exception:
+        logger.exception("Failed to persist sync_times")
 
 
 # # Ejecuta la herramienta en el directorio path
