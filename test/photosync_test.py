@@ -58,7 +58,7 @@ def detectar_tipo_archivo(archivo):
 def entorno_de_prueba():
     settings.SOURCE_PATHS = os.path.abspath("./test/movil")
     settings.TARGET_PATH = os.path.abspath("./test/fotos")
-    settings.TAGNAME_NOTFOUND_PATH = os.path.abspath("./test/fotos/sin_fecha")
+    settings.TAGNAME_NOTFOUND_PATH = os.path.abspath("./test/fotos/no_date")
     # TODO: Este fichero no se crea durane la ejecución de los tests, no se llama a save_sync_times
     settings.LAST_SYNC_TIME_PATH = "./test/.photosync_last.json"
     media_path = os.path.abspath("./test/media")
@@ -221,4 +221,3 @@ def test_create_hardlinks(mock_run, entorno_de_prueba, nombre_archivo_original):
 
     assert os.path.exists(hardlink_file), f"El hardlink no se creó en la ruta: {hardlink_file}"
     assert os.path.samefile(original_file, hardlink_file), "El archivo no es un hardlink al original."
-
