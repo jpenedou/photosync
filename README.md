@@ -71,10 +71,37 @@ Para instalar PhotoSync como servicio de usuario systemd con watcher automático
 bash deploy/install.sh
 ```
 
-El instalador te pedirá las rutas de configuración y creará:
+El instalador se puede ejecutar desde cualquier ubicación sin necesidad de parámetros. Detecta automáticamente las rutas del repositorio y crea:
 - `~/.config/photosync/photosync.env` con tu configuración
 - `~/.local/bin/photosync-run` y `~/.local/bin/photosync-watcher.py`
 - Servicio systemd en `~/.config/systemd/user/photosync-watcher.service`
+
+**Opciones del instalador**:
+- `--no-systemd`: Instala archivos pero no activa el servicio systemd (útil para pruebas)
+- `--force`: Sobrescribe `photosync.env` existente (crea backup automático)
+- `--non-interactive`: Falla si faltan variables de entorno requeridas (no pregunta)
+- `-h, --help`: Muestra ayuda de uso
+
+**Comportamiento de protección**: Por defecto, el instalador NO sobrescribe `~/.config/photosync/photosync.env` si ya existe. Usa `--force` para actualizar la configuración (se creará un backup con timestamp).
+
+**Ejemplos de uso**:
+
+```bash
+# Instalación normal (pregunta rutas si no están en entorno)
+bash deploy/install.sh
+
+# Instalación no interactiva con variables predefinidas
+PHOTOSYNC_SOURCE_PATHS="/mnt/a:/mnt/b" \
+PHOTOSYNC_TARGET_PATH="/mnt/photos" \
+PHOTOSYNC_TAGNAME_NOTFOUND_PATH="/mnt/photos/NO_DATE" \
+bash deploy/install.sh
+
+# Solo instalar archivos sin activar systemd (para pruebas)
+bash deploy/install.sh --no-systemd
+
+# Forzar actualización de configuración (crea backup)
+bash deploy/install.sh --force
+```
 
 Para desinstalar:
 
