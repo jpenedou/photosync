@@ -56,6 +56,9 @@ def detectar_tipo_archivo(archivo):
 # Fixture para preparar y limpiar el entorno de prueba
 @pytest.fixture
 def entorno_de_prueba():
+    # Asegurar que main use 'exiftool' aunque no esté en PATH del entorno de test
+    main.EXIFTOOL_PATH = "exiftool"
+
     settings.SOURCE_PATHS = os.path.abspath("./test/movil")
     settings.TARGET_PATH = os.path.abspath("./test/fotos")
     settings.TAGNAME_NOTFOUND_PATH = os.path.abspath("./test/fotos/no_date")
@@ -98,12 +101,13 @@ def test_copiar_archivo(mock_run, entorno_de_prueba, nombre_archivo_original, nu
 
     def side_effect(*args, **kwargs):
         command = args[0]
-        if command[0] == "file":
+        cmd = os.path.basename(command[0])
+        if cmd == "file":
             if ".jpg" in command[-1] or ".HEIC" in command[-1]:
                 return Mock(stdout="whatever: image/jpeg")
             elif ".MP4" in command[-1] or ".MOV" in command[-1] or ".mp4" in command[-1]:
                 return Mock(stdout="whatever: video/mp4")
-        elif command[0] == "exiftool":
+        elif cmd == "exiftool":
             fecha_str = extraer_fecha_desde_nombre(nuevo_nombre_esperado).replace("-", ":")
             if ".jpg" in command[-1] or ".HEIC" in command[-1]:
                 return Mock(stdout=f"Date/Time Original: {fecha_str}")
@@ -147,12 +151,13 @@ def test_eliminar_archivo_existente(mock_run, entorno_de_prueba, nombre_archivo_
 
     def side_effect(*args, **kwargs):
         command = args[0]
-        if command[0] == "file":
+        cmd = os.path.basename(command[0])
+        if cmd == "file":
             if ".jpg" in command[-1] or ".HEIC" in command[-1]:
                 return Mock(stdout="whatever: image/jpeg")
             elif ".MP4" in command[-1] or ".MOV" in command[-1] or ".mp4" in command[-1]:
                 return Mock(stdout="whatever: video/mp4")
-        elif command[0] == "exiftool":
+        elif cmd == "exiftool":
             fecha_str = extraer_fecha_desde_nombre(nuevo_nombre_esperado).replace("-", ":")
             if ".jpg" in command[-1] or ".HEIC" in command[-1]:
                 return Mock(stdout=f"Date/Time Original: {fecha_str}")
@@ -201,12 +206,14 @@ def test_create_hardlinks(mock_run, entorno_de_prueba, nombre_archivo_original):
 
     def side_effect(*args, **kwargs):
         command = args[0]
-        if command[0] == "file":
-            if ".jpg" in command[-1]:
+        cmd = os.path.basename(command[0])
+        if cmd == "file":
+            if ".jpg" in command[-1] or ".HEIC" in command[-1]:
                 return Mock(stdout="whatever: image/jpeg")
-            elif ".mp4" in command[-1]:
+            elif ".MP4" in command[-1] or ".MOV" in command[-1] or ".mp4" in command[-1]:
                 return Mock(stdout="whatever: video/mp4")
-        elif command[0] == "exiftool":
+        elif cmd == "exiftool":
+            # Sin fecha para forzar ruta de hardlink
             return Mock(stdout="")
         return Mock(stdout="")
 

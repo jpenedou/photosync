@@ -146,63 +146,82 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
 
     hash_archivo = calcular_hash_archivo(archivo)
 
-    def comprobar_si_sincronizado(hash_archivo, archivo_nuevo):
-        if os.path.exists(archivo_nuevo):
-            return hash_archivo == calcular_hash_archivo(archivo_nuevo)
+    def comprobar_si_sincronizado(hash_src, destino):
+        if os.path.exists(destino):
+            try:
+                return hash_src == calcular_hash_archivo(destino)
+            except Exception:
+                return False
+        return False
+
+    def resolver_destino_unico(base_dir, base_name, hash_src):
+        """Devuelve (ruta_destino_final, ya_sincronizado_bool).
+        - Si base_name no existe -> usarlo.
+        - Si existe con mismo hash -> ya sincronizado.
+        - Si existe con distinto contenido -> probar _1, _2, ...
+        """
+        nombre, ext = os.path.splitext(base_name)
+        candidato = os.path.join(base_dir, base_name)
+        if not os.path.exists(candidato):
+            return candidato, False
+        # Existe: comprobar si ya sincronizado (mismo hash)
+        try:
+            if hash_src == calcular_hash_archivo(candidato):
+                return candidato, True
+        except Exception:
+            pass
+        # Buscar siguiente nombre libre con sufijo incremental
+        idx = 1
+        while True:
+            candidato = os.path.join(base_dir, f"{nombre}_{idx}{ext}")
+            if not os.path.exists(candidato):
+                return candidato, False
+            try:
+                if hash_src == calcular_hash_archivo(candidato):
+                    return candidato, True
+            except Exception:
+                pass
+            idx += 1
 
     # Respectar DRY_RUN si está activado
     if getattr(settings, "DRY_RUN", False):
-        if os.path.exists(archivo_existente):
-            # Comparar contenido de los archivos
-            try:
-                if hash_archivo == calcular_hash_archivo(archivo_existente):
-                    if comprobar_si_sincronizado(hash_archivo, archivo_nuevo):
-                        logger.info(f"(DRY) {nombre_original} se omite, ya sincronizado en: {archivo_nuevo}")
-                    else:
-                        logger.info(f"(DRY) Se detectó archivo existente con mismo contenido. Se propondría copiar {archivo} -> {archivo_nuevo} y eliminar {archivo_existente} después de la copia")
+        try:
+            dest_final, ya_sync = resolver_destino_unico(nueva_ruta, nuevo_nombre, hash_archivo)
+            if ya_sync:
+                logger.info(f"(DRY) {nombre_original} se omite, ya sincronizado en: {dest_final}")
+            else:
+                if os.path.exists(archivo_existente) and hash_archivo == calcular_hash_archivo(archivo_existente):
+                    logger.info(f"(DRY) Se propondría copiar {archivo} -> {dest_final} y eliminar {archivo_existente} después de la copia")
                 else:
-                    logger.info(f"(DRY) {nombre_original} ya existe con diferente contenido en: {archivo_existente}; se propondría copiar {archivo} -> {archivo_nuevo}")
-            except Exception:
-                logger.exception(f"(DRY) Error evaluando la acción de copia para: {archivo}")
-        else:
-            try:
-                if comprobar_si_sincronizado(hash_archivo, archivo_nuevo):
-                    logger.info(f"(DRY) {nombre_original} se omite, ya sincronizado en: {archivo_nuevo}")
-                    return
-
-                # Indicar que se copiaría el archivo
-                logger.info(f"(DRY) Se propondría copiar {archivo} -> {archivo_nuevo}")
-            except Exception:
-                logger.exception(f"(DRY) Error evaluando la acción de copia para: {archivo}")
+                    logger.info(f"(DRY) Se propondría copiar {archivo} -> {dest_final}")
+        except Exception:
+            logger.exception(f"(DRY) Error evaluando la acción de copia para: {archivo}")
         return
 
+    # Modo normal
     if os.path.exists(archivo_existente):
         # Comparar contenido de los archivos
         if hash_archivo == calcular_hash_archivo(archivo_existente):
-            if comprobar_si_sincronizado(hash_archivo, archivo_nuevo):
-                logger.info(f"{nombre_original} se omite, ya sincronizado en: {archivo_nuevo}")
+            dest_final, ya_sync = resolver_destino_unico(nueva_ruta, nuevo_nombre, hash_archivo)
+            if ya_sync:
+                logger.info(f"{nombre_original} se omite, ya sincronizado en: {dest_final}")
             else:
-                # Copiar el archivo
-                shutil.copy2(archivo, archivo_nuevo)  # shutil.copy2 mantiene los metadatos
-
-            # Verificar si la copia fue exitosa
-            if os.path.exists(archivo_nuevo):
-                # Eliminar el archivo existente después de una copia exitosa
-                os.remove(archivo_existente)
-                logger.info(f"{nombre_original} --> {archivo_nuevo} Eliminado el archivo original existente: {archivo_existente}")
-            else:
-                logger.error(f"{nombre_original} --> {archivo_nuevo}")
+                shutil.copy2(archivo, dest_final)
+                if os.path.exists(dest_final):
+                    # Eliminar el archivo existente después de una copia exitosa
+                    os.remove(archivo_existente)
+                    logger.info(f"{nombre_original} --> {dest_final} Eliminado el archivo original existente: {archivo_existente}")
+                else:
+                    logger.error(f"{nombre_original} --> {dest_final}")
         else:
             logger.warning(f"{nombre_original} ya existe con diferente contenido en: {archivo_existente}")
     else:
-        if comprobar_si_sincronizado(hash_archivo, archivo_nuevo):
-            logger.info(f"{nombre_original} se omite, ya sincronizado en: {archivo_nuevo}")
+        dest_final, ya_sync = resolver_destino_unico(nueva_ruta, nuevo_nombre, hash_archivo)
+        if ya_sync:
+            logger.info(f"{nombre_original} se omite, ya sincronizado en: {dest_final}")
             return
-
-        # Copiar el archivo si no existe en la nueva ruta
-        shutil.copy2(archivo, archivo_nuevo)  # shutil.copy2 mantiene los metadatos
-
-        logger.info(f"{nombre_original} --> {archivo_nuevo}")
+        shutil.copy2(archivo, dest_final)  # shutil.copy2 mantiene los metadatos
+        logger.info(f"{nombre_original} --> {dest_final}")
 
 
 # Función para crear un enlace duro
