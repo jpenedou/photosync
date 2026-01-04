@@ -5,6 +5,7 @@ import os
 import re
 import shutil
 import subprocess
+import shutil as _shutil
 from datetime import datetime
 from typing import Dict
 from logging.handlers import TimedRotatingFileHandler
@@ -36,6 +37,11 @@ logger.setLevel(logging.DEBUG)
 logger.propagate = False
 
 
+# Resolve exiftool path robustly (env or PATH)
+EXIFTOOL_PATH = os.environ.get("EXIFTOOL_PATH") or _shutil.which("exiftool")
+if not EXIFTOOL_PATH:
+    logger.error("exiftool no encontrado. Configure EXIFTOOL_PATH o instale exiftool en PATH.")
+
 # TODO: revisar si la fecha es UTC para las dos tags
 time_format = "%Y-%m-%d %H:%M:%S"
 images_tagname = "datetimeoriginal"
@@ -55,8 +61,12 @@ def detectar_tipo_archivo(archivo):
 
 # Función para obtener la fecha de captura o creación con exiftool
 def obtener_fecha_exif(archivo):
+    if not EXIFTOOL_PATH:
+        # No exiftool configured; return None to trigger hardlink path
+        logger.error("exiftool no disponible; no se puede leer metadatos de %s", archivo)
+        return None, None
     resultado = subprocess.run(
-        ["exiftool", "-DateTimeOriginal", "-TrackCreateDate", archivo],
+        [EXIFTOOL_PATH, "-DateTimeOriginal", "-TrackCreateDate", archivo],
         stdout=subprocess.PIPE,
         text=True,
     )

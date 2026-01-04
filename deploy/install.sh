@@ -88,6 +88,13 @@ if [ -n "$missing" ]; then
   echo "AVISO: faltan utilidades del sistema:$missing (instálalas si aún no lo has hecho)."
 fi
 
+# Detectar directorio de exiftool para ampliar PATH en el unit
+EXIFTOOL_BIN="$(command -v exiftool || true)"
+EXIFTOOL_DIR=""
+if [ -n "$EXIFTOOL_BIN" ]; then
+  EXIFTOOL_DIR="$(dirname "$EXIFTOOL_BIN")"
+fi
+
 if [ ! -f "$WATCHER_SRC" ]; then
   echo "ERROR: watcher no encontrado en $WATCHER_SRC"
   exit 1
@@ -193,6 +200,14 @@ fi
 
 # --- Escribir systemd user unit ---
 echo "Escribiendo unit user en $SERVICE_FILE"
+# Construir PATH extendido incluyendo directorios estándar y el de exiftool si se detectó
+EXT_PATH="/usr/local/bin:/usr/bin:/bin"
+if [ -n "$EXIFTOOL_DIR" ]; then
+  case ":$EXT_PATH:" in
+    *":$EXIFTOOL_DIR:"*) : ;; # ya está incluido
+    *) EXT_PATH="$EXT_PATH:$EXIFTOOL_DIR" ;;
+  esac
+fi
 cat >"$SERVICE_FILE" <<EOF
 [Unit]
 Description=PhotoSync Watcher (user)
@@ -201,6 +216,7 @@ After=network.target
 [Service]
 Type=simple
 EnvironmentFile=%h/.config/photosync/photosync.env
+Environment=PATH=$EXT_PATH
 ExecStart=/usr/bin/python3 %h/.local/bin/photosync-watcher.py
 Restart=always
 RestartSec=5
