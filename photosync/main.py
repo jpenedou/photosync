@@ -272,7 +272,9 @@ def process_files(base_path, target_path="./", links_path="./links"):
 
     # Iterar sobre todos los archivos en base_path
     # TODO: ordenar los archivos por nombre
-    archivos = [entrada.name for entrada in os.scandir(base_path) if entrada.is_file()]
+    from photosync.utils import is_hidden_path
+
+    archivos = [entrada.name for entrada in os.scandir(base_path) if entrada.is_file() and (settings.PHOTOSYNC_SYNC_HIDDEN or not is_hidden_path(os.path.join(base_path, entrada.name)))]
     for archivo in archivos:
         archivo_path = os.path.join(base_path, archivo)
         # Verificar el tiempo de modificación del archivo
@@ -312,6 +314,11 @@ def process_folder(path):
     path_ctime = obtener_changed_time(path).replace(microsecond=0)
     path_ctime_str = datetime.strftime(path_ctime, time_format)
 
+    from photosync.utils import is_hidden_path
+
+    if (not settings.PHOTOSYNC_SYNC_HIDDEN) and is_hidden_path(path):
+        logger.info("Se omite directorio oculto: %s", path)
+        return
     if path not in sync_times or datetime.strptime(sync_times[path], time_format) < path_ctime:
         logger.info("Sincronizando " + path)
         # sync_times[path] = path_mtime_str
@@ -326,8 +333,10 @@ def process_folder(path):
             logger.info(f"{path} se omite, ya ha sido sincronizado")
 
     # TODO: ordenar los directorios por nombre
+    from photosync.utils import is_hidden_path
+
     with os.scandir(path) as files:
-        subdirectories = [file.path for file in files if file.is_dir() and not file.name.startswith(".")]
+        subdirectories = [file.path for file in files if file.is_dir() and (settings.PHOTOSYNC_SYNC_HIDDEN or not is_hidden_path(file.path))]
 
     for subdirectory in subdirectories:
         process_folder(subdirectory)

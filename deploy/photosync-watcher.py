@@ -11,6 +11,7 @@ import signal
 from datetime import datetime
 from pathlib import Path
 import json
+from photosync.utils import is_hidden_path
 
 try:
     from watchdog.observers import Observer
@@ -77,6 +78,20 @@ class EventHandler(FileSystemEventHandler):
         if ev_type not in ALLOWED_EVENT_TYPES:
             logger.debug("(evt) ignored event_type=%s path=%s", ev_type, event.src_path)
             return
+
+        # Ignorar archivos ocultos si la configuración no permite sincronizarlos
+        try:
+            from photosync import settings as _settings
+
+            if not getattr(_settings, "PHOTOSYNC_SYNC_HIDDEN", False):
+                src_p = getattr(event, "src_path", None)
+                dst_p = getattr(event, "dest_path", None)
+                if (src_p and is_hidden_path(src_p)) or (dst_p and is_hidden_path(dst_p)):
+                    logger.debug("(evt) hidden path ignored: src=%s dest=%s", src_p, dst_p)
+                    return
+        except Exception:
+            logger.debug("(evt) hidden-check failed", exc_info=True)
+
         try:
             logger.info("(evt) %s path=%s", ev_type, event.src_path)
         except Exception:
@@ -286,6 +301,16 @@ def polling_thread(watch_paths):
                         prev_ts = float(last_record)
                     else:
                         prev_ts = 0.0
+
+                    # Ignore hidden paths from LAST_SYNC_FILE if hidden sync is disabled
+                    try:
+                        from photosync import settings as _settings
+
+                        if not getattr(_settings, "PHOTOSYNC_SYNC_HIDDEN", False) and is_hidden_path(p_abs):
+                            logger.debug("(polling) ignoring hidden path from LAST_SYNC_FILE: %s", p_abs)
+                            continue
+                    except Exception:
+                        logger.debug("(polling) hidden-check failed for %s", p_abs, exc_info=True)
 
                     mtime = _get_dir_mtime(p_abs)
                     # Apply a small tolerance to avoid spurious detections due to clock/precision differences
