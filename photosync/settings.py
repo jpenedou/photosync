@@ -43,3 +43,6 @@ TAGNAME_NOTFOUND_PATH = _expand_path(os.environ.get("PHOTOSYNC_TAGNAME_NOTFOUND_
 LAST_SYNC_TIME_PATH = _expand_path(os.environ.get("PHOTOSYNC_LAST_SYNC_TIME_PATH", "~/.cache/photosync/.photosync_last.json"))
 DRY_RUN = os.environ.get("PHOTOSYNC_DRY_RUN", "").lower() in ("1", "true", "yes", "on")
 PHOTOSYNC_SYNC_HIDDEN = os.environ.get("PHOTOSYNC_SYNC_HIDDEN", "0").lower() in ("1", "true", "yes", "on")
+
+# Habilita modo verbose (mostrar DEBUG y permitir ver mensajes de omisión)
+PHOTOSYNC_VERBOSE = os.environ.get("PHOTOSYNC_VERBOSE", "0").lower() in ("1", "true", "yes", "on")

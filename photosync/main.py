@@ -33,7 +33,11 @@ consoleHandler.setFormatter(formatter)
 logger = logging.getLogger(__name__)
 logger.addHandler(handler)
 logger.addHandler(consoleHandler)
-logger.setLevel(logging.DEBUG)
+# Establecer nivel por defecto (INFO) para reducir ruido; permitir DEBUG con PHOTOSYNC_VERBOSE o DRY_RUN
+if getattr(settings, "PHOTOSYNC_VERBOSE", False) or getattr(settings, "DRY_RUN", False):
+    logger.setLevel(logging.DEBUG)
+else:
+    logger.setLevel(logging.INFO)
 logger.propagate = False
 
 
@@ -188,7 +192,7 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
         try:
             dest_final, ya_sync = resolver_destino_unico(nueva_ruta, nuevo_nombre, hash_archivo)
             if ya_sync:
-                logger.info(f"(DRY) {nombre_original} se omite, ya sincronizado en: {dest_final}")
+                log_skip(f"(DRY) {nombre_original} se omite, ya sincronizado en: {dest_final}")
             else:
                 if os.path.exists(archivo_existente) and hash_archivo == calcular_hash_archivo(archivo_existente):
                     logger.info(f"(DRY) Se propondría copiar {archivo} -> {dest_final} y eliminar {archivo_existente} después de la copia")
@@ -204,7 +208,7 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
         if hash_archivo == calcular_hash_archivo(archivo_existente):
             dest_final, ya_sync = resolver_destino_unico(nueva_ruta, nuevo_nombre, hash_archivo)
             if ya_sync:
-                logger.info(f"{nombre_original} se omite, ya sincronizado en: {dest_final}")
+                log_skip(f"{nombre_original} se omite, ya sincronizado en: {dest_final}")
             else:
                 shutil.copy2(archivo, dest_final)
                 if os.path.exists(dest_final):
@@ -218,7 +222,7 @@ def copiar_y_renombrar_archivo(archivo, nueva_ruta, nuevo_nombre):
     else:
         dest_final, ya_sync = resolver_destino_unico(nueva_ruta, nuevo_nombre, hash_archivo)
         if ya_sync:
-            logger.info(f"{nombre_original} se omite, ya sincronizado en: {dest_final}")
+            log_skip(f"{nombre_original} se omite, ya sincronizado en: {dest_final}")
             return
         shutil.copy2(archivo, dest_final)  # shutil.copy2 mantiene los metadatos
         logger.info(f"{nombre_original} --> {dest_final}")
@@ -253,6 +257,14 @@ def crear_enlace_duro(archivo, links_path):
         logger.info(f"{os.path.basename(archivo)} --link-> {enlace_nuevo}")
     except Exception as e:
         logger.error(f"{os.path.basename(archivo)} no se pudo crear el enlace duro: {e}")
+
+
+# Helper para registrar omisiones (muestra INFO en DRY_RUN o VERBOSE, DEBUG en ejecución normal)
+def log_skip(message: str):
+    if getattr(settings, "DRY_RUN", False) or getattr(settings, "PHOTOSYNC_VERBOSE", False):
+        logger.info(message)
+    else:
+        logger.debug(message)
 
 
 # Función para obtener el tiempo de modificación de un archivo
@@ -296,7 +308,7 @@ def process_files(base_path, target_path="./", links_path="./links"):
             else:
                 logger.warning(f"{archivo} no es una imagen ni un video.")
         else:
-            logger.info(f"{archivo} se omite, no se ha modificado (ctime: {archivo_changed_time})")
+            log_skip(f"{archivo} se omite, no se ha modificado (ctime: {archivo_changed_time})")
 
     sync_times[base_path] = base_path_changed_time.strftime(time_format)
 
@@ -330,7 +342,7 @@ def process_folder(path):
         logger.info("Sincronizado " + path + " con fecha de modificación: " + path_ctime_str)
     else:
         if path in sync_times:
-            logger.info(f"{path} se omite, ya ha sido sincronizado")
+            log_skip(f"{path} se omite, ya ha sido sincronizado")
 
     # TODO: ordenar los directorios por nombre
     from photosync.utils import is_hidden_path
